@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:ForageApp.xcodeproj">
+      location = "self:/Users/mahamalik/Documents/CodePath/ForageApp/Forage.xcodeproj">
    </FileRef>
 </Workspace>

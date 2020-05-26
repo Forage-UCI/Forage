@@ -35,7 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5852D4D9247CF81300D09889 /* ForageApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForageApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5852D4D9247CF81300D09889 /* Forage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Forage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5852D4DC247CF81300D09889 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5852D4DE247CF81300D09889 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5852D4E0247CF81300D09889 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -43,10 +43,10 @@
 		5852D4E5247CF81500D09889 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5852D4E8247CF81500D09889 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5852D4EA247CF81500D09889 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5852D4EF247CF81600D09889 /* ForageAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ForageAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5852D4EF247CF81600D09889 /* ForageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ForageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5852D4F3247CF81600D09889 /* ForageAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForageAppTests.swift; sourceTree = "<group>"; };
 		5852D4F5247CF81600D09889 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5852D4FA247CF81600D09889 /* ForageAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ForageAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5852D4FA247CF81600D09889 /* ForageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ForageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5852D4FE247CF81600D09889 /* ForageAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForageAppUITests.swift; sourceTree = "<group>"; };
 		5852D500247CF81600D09889 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,9 +89,9 @@
 		5852D4DA247CF81300D09889 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5852D4D9247CF81300D09889 /* ForageApp.app */,
-				5852D4EF247CF81600D09889 /* ForageAppTests.xctest */,
-				5852D4FA247CF81600D09889 /* ForageAppUITests.xctest */,
+				5852D4D9247CF81300D09889 /* Forage.app */,
+				5852D4EF247CF81600D09889 /* ForageTests.xctest */,
+				5852D4FA247CF81600D09889 /* ForageUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -131,9 +131,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5852D4D8247CF81300D09889 /* ForageApp */ = {
+		5852D4D8247CF81300D09889 /* Forage */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5852D503247CF81600D09889 /* Build configuration list for PBXNativeTarget "ForageApp" */;
+			buildConfigurationList = 5852D503247CF81600D09889 /* Build configuration list for PBXNativeTarget "Forage" */;
 			buildPhases = (
 				5852D4D5247CF81300D09889 /* Sources */,
 				5852D4D6247CF81300D09889 /* Frameworks */,
@@ -143,14 +143,14 @@
 			);
 			dependencies = (
 			);
-			name = ForageApp;
+			name = Forage;
 			productName = ForageApp;
-			productReference = 5852D4D9247CF81300D09889 /* ForageApp.app */;
+			productReference = 5852D4D9247CF81300D09889 /* Forage.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5852D4EE247CF81600D09889 /* ForageAppTests */ = {
+		5852D4EE247CF81600D09889 /* ForageTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5852D506247CF81600D09889 /* Build configuration list for PBXNativeTarget "ForageAppTests" */;
+			buildConfigurationList = 5852D506247CF81600D09889 /* Build configuration list for PBXNativeTarget "ForageTests" */;
 			buildPhases = (
 				5852D4EB247CF81600D09889 /* Sources */,
 				5852D4EC247CF81600D09889 /* Frameworks */,
@@ -161,14 +161,14 @@
 			dependencies = (
 				5852D4F1247CF81600D09889 /* PBXTargetDependency */,
 			);
-			name = ForageAppTests;
+			name = ForageTests;
 			productName = ForageAppTests;
-			productReference = 5852D4EF247CF81600D09889 /* ForageAppTests.xctest */;
+			productReference = 5852D4EF247CF81600D09889 /* ForageTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		5852D4F9247CF81600D09889 /* ForageAppUITests */ = {
+		5852D4F9247CF81600D09889 /* ForageUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5852D509247CF81600D09889 /* Build configuration list for PBXNativeTarget "ForageAppUITests" */;
+			buildConfigurationList = 5852D509247CF81600D09889 /* Build configuration list for PBXNativeTarget "ForageUITests" */;
 			buildPhases = (
 				5852D4F6247CF81600D09889 /* Sources */,
 				5852D4F7247CF81600D09889 /* Frameworks */,
@@ -179,9 +179,9 @@
 			dependencies = (
 				5852D4FC247CF81600D09889 /* PBXTargetDependency */,
 			);
-			name = ForageAppUITests;
+			name = ForageUITests;
 			productName = ForageAppUITests;
-			productReference = 5852D4FA247CF81600D09889 /* ForageAppUITests.xctest */;
+			productReference = 5852D4FA247CF81600D09889 /* ForageUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -207,7 +207,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5852D4D4247CF81300D09889 /* Build configuration list for PBXProject "ForageApp" */;
+			buildConfigurationList = 5852D4D4247CF81300D09889 /* Build configuration list for PBXProject "Forage" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -220,9 +220,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5852D4D8247CF81300D09889 /* ForageApp */,
-				5852D4EE247CF81600D09889 /* ForageAppTests */,
-				5852D4F9247CF81600D09889 /* ForageAppUITests */,
+				5852D4D8247CF81300D09889 /* Forage */,
+				5852D4EE247CF81600D09889 /* ForageTests */,
+				5852D4F9247CF81600D09889 /* ForageUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -286,12 +286,12 @@
 /* Begin PBXTargetDependency section */
 		5852D4F1247CF81600D09889 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5852D4D8247CF81300D09889 /* ForageApp */;
+			target = 5852D4D8247CF81300D09889 /* Forage */;
 			targetProxy = 5852D4F0247CF81600D09889 /* PBXContainerItemProxy */;
 		};
 		5852D4FC247CF81600D09889 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5852D4D8247CF81300D09889 /* ForageApp */;
+			target = 5852D4D8247CF81300D09889 /* Forage */;
 			targetProxy = 5852D4FB247CF81600D09889 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -441,7 +441,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mahamalik.ForageApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Forage;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -458,7 +458,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mahamalik.ForageApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Forage;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -481,7 +481,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ForageApp.app/ForageApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Forage.app/Forage";
 			};
 			name = Debug;
 		};
@@ -502,7 +502,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ForageApp.app/ForageApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Forage.app/Forage";
 			};
 			name = Release;
 		};
@@ -547,7 +547,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5852D4D4247CF81300D09889 /* Build configuration list for PBXProject "ForageApp" */ = {
+		5852D4D4247CF81300D09889 /* Build configuration list for PBXProject "Forage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5852D501247CF81600D09889 /* Debug */,
@@ -556,7 +556,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5852D503247CF81600D09889 /* Build configuration list for PBXNativeTarget "ForageApp" */ = {
+		5852D503247CF81600D09889 /* Build configuration list for PBXNativeTarget "Forage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5852D504247CF81600D09889 /* Debug */,
@@ -565,7 +565,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5852D506247CF81600D09889 /* Build configuration list for PBXNativeTarget "ForageAppTests" */ = {
+		5852D506247CF81600D09889 /* Build configuration list for PBXNativeTarget "ForageTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5852D507247CF81600D09889 /* Debug */,
@@ -574,7 +574,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5852D509247CF81600D09889 /* Build configuration list for PBXNativeTarget "ForageAppUITests" */ = {
+		5852D509247CF81600D09889 /* Build configuration list for PBXNativeTarget "ForageUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5852D50A247CF81600D09889 /* Debug */,
