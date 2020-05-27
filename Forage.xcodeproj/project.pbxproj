@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2EDA3DF4658DCA519AF3A4E4 /* Pods_ForageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2670A827E4D07D624D9A4A0A /* Pods_ForageTests.framework */; };
+		58394CA6247E252B00BC3053 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58394CA5247E252B00BC3053 /* LoginViewController.swift */; };
+		58394CA8247E2C2600BC3053 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58394CA7247E2C2600BC3053 /* FeedViewController.swift */; };
 		5852D4DD247CF81300D09889 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5852D4DC247CF81300D09889 /* AppDelegate.swift */; };
 		5852D4DF247CF81300D09889 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5852D4DE247CF81300D09889 /* SceneDelegate.swift */; };
 		5852D4E1247CF81300D09889 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5852D4E0247CF81300D09889 /* ViewController.swift */; };
@@ -43,6 +45,8 @@
 		4C0538653353291D2A0A958A /* Pods-Forage-ForageUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forage-ForageUITests.debug.xcconfig"; path = "Target Support Files/Pods-Forage-ForageUITests/Pods-Forage-ForageUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4C9A72110DFBEFC8D9182776 /* Pods-ForageTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForageTests.release.xcconfig"; path = "Target Support Files/Pods-ForageTests/Pods-ForageTests.release.xcconfig"; sourceTree = "<group>"; };
 		4F9483C98F9A6101D4D0980C /* Pods-ForageTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForageTests.debug.xcconfig"; path = "Target Support Files/Pods-ForageTests/Pods-ForageTests.debug.xcconfig"; sourceTree = "<group>"; };
+		58394CA5247E252B00BC3053 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		58394CA7247E2C2600BC3053 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		5852D4D9247CF81300D09889 /* Forage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Forage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5852D4DC247CF81300D09889 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5852D4DE247CF81300D09889 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,7 +105,6 @@
 				4F9483C98F9A6101D4D0980C /* Pods-ForageTests.debug.xcconfig */,
 				4C9A72110DFBEFC8D9182776 /* Pods-ForageTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -137,6 +140,8 @@
 				5852D4E5247CF81500D09889 /* Assets.xcassets */,
 				5852D4E7247CF81500D09889 /* LaunchScreen.storyboard */,
 				5852D4EA247CF81500D09889 /* Info.plist */,
+				58394CA5247E252B00BC3053 /* LoginViewController.swift */,
+				58394CA7247E2C2600BC3053 /* FeedViewController.swift */,
 			);
 			path = ForageApp;
 			sourceTree = "<group>";
@@ -408,7 +413,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58394CA6247E252B00BC3053 /* LoginViewController.swift in Sources */,
 				5852D4E1247CF81300D09889 /* ViewController.swift in Sources */,
+				58394CA8247E2C2600BC3053 /* FeedViewController.swift in Sources */,
 				5852D4DD247CF81300D09889 /* AppDelegate.swift in Sources */,
 				5852D4DF247CF81300D09889 /* SceneDelegate.swift in Sources */,
 			);
