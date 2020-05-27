@@ -97,7 +97,7 @@ Forage is a restaurant social media app that allows users to browse dining optio
 [Add picture of your hand sketched wireframes in this section]
 [Wireframe PDF](https://github.com/Forage-UCI/Forage/blob/master/Wireframe.pdf)
 ### [BONUS] Digital Wireframes & Mockups
-[Wireframe PDF](https://github.com/Forage-UCI/Forage/blob/master/Wireframe.pdf)
+[Figma Prototype](https://www.figma.com/file/rYDvYkrMSYDYceRaqNsbGL/Untitled?node-id=0%3A1)
 ### [BONUS] Interactive Prototype
 
 ## Schema 
