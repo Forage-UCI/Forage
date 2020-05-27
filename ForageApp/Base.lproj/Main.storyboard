@@ -192,7 +192,7 @@
         <scene sceneID="kEs-wZ-kO5">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OoP-1N-jv6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Explore" image="magnifyingglass.circle" catalog="system" selectedImage="magnifyingglass.circle.fill" id="yXe-Fb-N4o"/>
+                    <tabBarItem key="tabBarItem" title="Explore" image="mappin" catalog="system" selectedImage="mappin" id="yXe-Fb-N4o"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cj3-0T-niS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
@@ -232,8 +232,7 @@
         <image name="Logo Name" width="750" height="102"/>
         <image name="house" catalog="system" width="128" height="110"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
-        <image name="magnifyingglass.circle" catalog="system" width="128" height="121"/>
-        <image name="magnifyingglass.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="mappin" catalog="system" width="105" height="128"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="person.circle.fill" catalog="system" width="128" height="121"/>
         <image name="person.crop.circle" catalog="system" width="128" height="121"/>
