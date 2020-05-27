@@ -7,15 +7,31 @@
 //
 
 import UIKit
+import Parse
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var username: UILabel!
+    @IBOutlet weak var profileImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func onLogout(_ sender: Any) {
+        PFUser.logOut()
+        
+        //switch user back to login screen
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let loginViewContoller = main.instantiateViewController(withIdentifier: "loginViewController")
+        
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        let delegate =  windowScene?.delegate as! SceneDelegate
+        
+        delegate.window?.rootViewController = loginViewContoller
+    }
 
     /*
     // MARK: - Navigation
