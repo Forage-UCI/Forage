@@ -79,21 +79,37 @@
             </objects>
             <point key="canvasLocation" x="139" y="118"/>
         </scene>
-        <!--Search-->
+        <!--Explore-->
         <scene sceneID="qZY-Qf-6Ka">
             <objects>
-                <viewController id="iIj-os-Nkh" sceneMemberID="viewController">
+                <viewController id="iIj-os-Nkh" customClass="ExploreViewController" customModule="Forage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jjg-bW-uqR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="umb-MC-WTb"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass.circle" catalog="system" selectedImage="magnifyingglass.circle.fill" id="yXe-Fb-N4o"/>
+                    <tabBarItem key="tabBarItem" title="Explore" image="magnifyingglass.circle" catalog="system" selectedImage="magnifyingglass.circle.fill" id="yXe-Fb-N4o"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HMB-dC-JN3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2013" y="587"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="8lQ-7b-QGW">
+            <objects>
+                <viewController id="bnC-M9-ffe" customClass="ProfileViewController" customModule="Forage" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7xa-cV-ygx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="wd0-TP-3r9"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person.circle" catalog="system" selectedImage="person.circle.fill" id="cQV-aI-7Fj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dMb-N1-Pvh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2012" y="1319"/>
         </scene>
         <!--Home-->
         <scene sceneID="zIH-t7-cRz">
@@ -123,6 +139,7 @@
                     <connections>
                         <segue destination="yF4-oJ-09T" kind="relationship" relationship="viewControllers" id="8Mj-kR-kmq"/>
                         <segue destination="iIj-os-Nkh" kind="relationship" relationship="viewControllers" id="vm6-bP-rh5"/>
+                        <segue destination="bnC-M9-ffe" kind="relationship" relationship="viewControllers" id="S7s-Ix-Mtj"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gss-8Q-KBE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -137,5 +154,7 @@
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="magnifyingglass.circle" catalog="system" width="128" height="121"/>
         <image name="magnifyingglass.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="person.circle" catalog="system" width="128" height="121"/>
+        <image name="person.circle.fill" catalog="system" width="128" height="121"/>
     </resources>
 </document>
