@@ -94,10 +94,12 @@ Forage is a restaurant social media app that allows users to browse dining optio
 * Profile Screen -> edit settings -> logout 
 
 ## Wireframes
-[Add picture of your hand sketched wireframes in this section]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+
+[Wireframe PDF](https://github.com/Forage-UCI/Forage/blob/master/Wireframe.pdf)
 
 ### [BONUS] Digital Wireframes & Mockups
+
+[Figma Prototype](https://www.figma.com/file/rYDvYkrMSYDYceRaqNsbGL/Untitled?node-id=0%3A1)
 
 ### [BONUS] Interactive Prototype
 
