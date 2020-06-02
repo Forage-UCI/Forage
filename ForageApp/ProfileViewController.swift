@@ -28,16 +28,17 @@ class ProfileViewController: UIViewController {
     
     
     @IBAction func onLogout(_ sender: Any) {
-        PFUser.logOut()
-        
-        //switch user back to login screen
-        let main = UIStoryboard(name: "Main", bundle: nil)
-        let loginViewContoller = main.instantiateViewController(withIdentifier: "loginViewController")
-        
-        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
-        let delegate =  windowScene?.delegate as! SceneDelegate
-        
-        delegate.window?.rootViewController = loginViewContoller
+        PFUser.logOutInBackground { (error) in
+            if let error = error{
+                print(error.localizedDescription)
+            }else{
+                print("Logged out")
+                let main = UIStoryboard(name: "Main", bundle: nil)
+                let loginViewController = main.instantiateViewController(identifier: "LoginViewController")
+                let sceneDelegate = self.view.window?.windowScene?.delegate as! SceneDelegate
+                sceneDelegate.window?.rootViewController = loginViewController
+            }
+        }
     }
 
     /*

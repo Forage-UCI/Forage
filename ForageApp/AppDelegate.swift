@@ -19,8 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         Parse.initialize(
             with: ParseClientConfiguration(block: { (configuration: ParseMutableClientConfiguration) -> Void in
-                configuration.applicationId = "Forage"
-                configuration.server = "https://damp-brushlands-48529.herokuapp.com/parse"
+                configuration.applicationId = "forage-uci"
+                configuration.server = "https://forage-uci.herokuapp.com/parse"
             })
         )
         

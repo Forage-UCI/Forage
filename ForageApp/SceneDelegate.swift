@@ -3,11 +3,12 @@
 //  ForageApp
 //
 //  Created by Maha Malik on 5/26/20.
+//  Modified by Yanjie Xu on 6/02/20.
 //  Copyright © 2020 Forage-UCI. All rights reserved.
 //
 
 import UIKit
-
+import Parse
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -17,7 +18,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else {return}
+        if PFUser.current() != nil{
+            let main = UIStoryboard(name: "Main", bundle:  nil)
+            self.window = UIWindow(windowScene: windowScene)
+            
+            let feedNavigationController = main.instantiateViewController(identifier: "MainNavigationController")
+            self.window?.rootViewController = feedNavigationController
+            print("window \(String(describing: window))")
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
