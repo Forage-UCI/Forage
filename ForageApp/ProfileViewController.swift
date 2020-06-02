@@ -13,12 +13,19 @@ class ProfileViewController: UIViewController {
 
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var checkInLabel: UILabel!
+    @IBOutlet weak var visitedPlacesLabel: UILabel!
+    @IBOutlet weak var friendsLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        //circular profile image
+        profileImageView.layer.masksToBounds = true
+        profileImageView.layer.cornerRadius = profileImageView.bounds.width / 2
+        username.text = PFUser.current()?.username
     }
+    
     
     @IBAction func onLogout(_ sender: Any) {
         PFUser.logOut()

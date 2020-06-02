@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,6 +23,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 configuration.server = "https://damp-brushlands-48529.herokuapp.com/parse"
             })
         )
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+            print("granted: (\(granted)")
+        }
         
         /*https://maps.googleapis.com/maps/api/place/nearbysearch/json
         ?location=-33.8670522,151.1957362

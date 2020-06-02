@@ -1,27 +1,20 @@
 //
-//  ExploreViewController.swift
+//  NotificationsViewController.swift
 //  Forage
 //
-//  Created by Maha Malik on 5/26/20.
+//  Created by Maha Malik on 6/1/20.
 //  Copyright © 2020 Forage-UCI. All rights reserved.
 //
 
 import UIKit
 
-class ExploreViewController: UIViewController {
+class NotificationsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Do any additional setup after loading the view.
-    }
-    
-    func locationsPickedLocation(controller: LocationsViewController, latitude: NSNumber, longitude: NSNumber, title: String) {
-        
-        //locationField.text = title
-        
-        //dismiss teh LocationVC after adding the pin
-        controller.dismiss(animated: true, completion: nil)
     }
     
 
