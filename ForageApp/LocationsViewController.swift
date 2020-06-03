@@ -138,7 +138,7 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
             checkInViewController.restName = name
             checkInViewController.formattedAddress = formattedAdress
         }
-//        tableView.deselectRow(at: indexPath, animated: true)
-        self.dismiss(animated: true, completion: nil)
+        tableView.deselectRow(at: indexPath, animated: true)
+//        self.dismiss(animated: true, completion: nil)
     }
 }
