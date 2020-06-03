@@ -64,6 +64,8 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
         // This is the selected venue
         let venue = results[(indexPath as NSIndexPath).row] as! NSDictionary
         
+        print(venue)
+        
         // Lat and lng of venue selected
         let lat = venue.value(forKeyPath: "location.lat") as! NSNumber
         let lng = venue.value(forKeyPath: "location.lng") as! NSNumber
@@ -71,12 +73,15 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
         
         /*-------TODO--------*/
         //Set the latitude and longitude of the venue and send it to the protocol
-        delegate.locationsPickedLocation(controller: self, latitude: lat, longitude: lng, title: name)
+        //delegate.locationsPickedLocation(controller: self, latitude: lat, longitude: lng, title: name)
         
         // Return to the PhotoMapViewController with the lat and lng of venue
         
         let latString = "\(lat)"
         let lngString = "\(lng)"
+        
+        print(latString + " " + lngString)
+        self.performSegue(withIdentifier: "CheckinSegue", sender: tableView.cellForRow(at: indexPath))
     }
     
     func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
@@ -118,4 +123,21 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
         task.resume()
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPath(for: cell)!
+        //Do data processing
+        let venue = results[(indexPath as NSIndexPath).row] as! NSDictionary
+        
+        if segue.identifier == "CheckinSegue"{
+            let checkInViewController = segue.destination as! CheckInViewController
+            
+            let name = venue.value(forKeyPath: "name") as! String
+            let formattedAdress = venue.value(forKeyPath: "location.formattedAddress") as! [String]?
+            checkInViewController.restName = name
+            checkInViewController.formattedAddress = formattedAdress
+        }
+        tableView.deselectRow(at: indexPath, animated: true)
+
+    }
 }

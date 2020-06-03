@@ -13,7 +13,6 @@
 		58394CA8247E2C2600BC3053 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58394CA7247E2C2600BC3053 /* FeedViewController.swift */; };
 		5852D4DD247CF81300D09889 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5852D4DC247CF81300D09889 /* AppDelegate.swift */; };
 		5852D4DF247CF81300D09889 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5852D4DE247CF81300D09889 /* SceneDelegate.swift */; };
-		5852D4E1247CF81300D09889 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5852D4E0247CF81300D09889 /* ViewController.swift */; };
 		5852D4E4247CF81300D09889 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5852D4E2247CF81300D09889 /* Main.storyboard */; };
 		5852D4E6247CF81500D09889 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5852D4E5247CF81500D09889 /* Assets.xcassets */; };
 		5852D4E9247CF81500D09889 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5852D4E7247CF81500D09889 /* LaunchScreen.storyboard */; };
@@ -60,7 +59,6 @@
 		5852D4D9247CF81300D09889 /* Forage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Forage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5852D4DC247CF81300D09889 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5852D4DE247CF81300D09889 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5852D4E0247CF81300D09889 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5852D4E3247CF81300D09889 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5852D4E5247CF81500D09889 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5852D4E8247CF81500D09889 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -174,7 +172,6 @@
 			isa = PBXGroup;
 			children = (
 				5852D4E5247CF81500D09889 /* Assets.xcassets */,
-				5852D4EA247CF81500D09889 /* Info.plist */,
 				5852D4E7247CF81500D09889 /* LaunchScreen.storyboard */,
 				5852D4E2247CF81300D09889 /* Main.storyboard */,
 			);
@@ -206,13 +203,13 @@
 		5852D4DB247CF81300D09889 /* ForageApp */ = {
 			isa = PBXGroup;
 			children = (
+				5852D4EA247CF81500D09889 /* Info.plist */,
 				5852D4DC247CF81300D09889 /* AppDelegate.swift */,
 				5852D4DE247CF81300D09889 /* SceneDelegate.swift */,
 				2020BADD248783A3001525EE /* LoginView */,
 				2020BADF2487844F001525EE /* FeedView */,
 				2020BAE1248784F3001525EE /* CheckInView */,
 				2020BADE248783BA001525EE /* ProfileView */,
-				5852D4E0247CF81300D09889 /* ViewController.swift */,
 				58BF80C5247E2FA00055F44F /* ExploreViewController.swift */,
 				58D160B3248613AB003FC1C1 /* LocationsViewController.swift */,
 				58D160B92486144A003FC1C1 /* LocationCell.swift */,
@@ -491,7 +488,6 @@
 				58BF80C4247E2F900055F44F /* ProfileViewController.swift in Sources */,
 				58394CA6247E252B00BC3053 /* LoginViewController.swift in Sources */,
 				58D160B4248613AB003FC1C1 /* LocationsViewController.swift in Sources */,
-				5852D4E1247CF81300D09889 /* ViewController.swift in Sources */,
 				58394CA8247E2C2600BC3053 /* FeedViewController.swift in Sources */,
 				5852D4DD247CF81300D09889 /* AppDelegate.swift in Sources */,
 				2020BADC24878371001525EE /* CheckInViewController.swift in Sources */,

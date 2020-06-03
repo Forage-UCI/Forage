@@ -8,11 +8,28 @@
 
 import UIKit
 
-class CheckInViewController: UIViewController {
+class CheckInViewController: UIViewController  {
 
+    @IBOutlet weak var RestNameLable: UILabel!
+    @IBOutlet weak var RestPhotoView: UIImageView!
+    @IBOutlet weak var ReviewTextField: UITextView!
+    @IBOutlet weak var AddressLabel: UILabel!
+    @IBOutlet weak var CheckInBtn: UIButton!
+    
+    var restName: String!
+    var formattedAddress: [String]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        RestNameLable.text = restName
+        
+        var address: String = ""
+        for str in formattedAddress{
+            address = address + str + " "
+        }
+        
+        AddressLabel.text = address
         // Do any additional setup after loading the view.
     }
     
