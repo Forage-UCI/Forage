@@ -82,6 +82,7 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
         
         print(latString + " " + lngString)
         self.performSegue(withIdentifier: "CheckinSegue", sender: tableView.cellForRow(at: indexPath))
+        
     }
     
     func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
@@ -137,7 +138,7 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
             checkInViewController.restName = name
             checkInViewController.formattedAddress = formattedAdress
         }
-        tableView.deselectRow(at: indexPath, animated: true)
-
+//        tableView.deselectRow(at: indexPath, animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
 }

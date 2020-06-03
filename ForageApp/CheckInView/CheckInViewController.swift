@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Parse
 class CheckInViewController: UIViewController  {
 
     @IBOutlet weak var RestNameLable: UILabel!
@@ -19,12 +19,13 @@ class CheckInViewController: UIViewController  {
     var restName: String!
     var formattedAddress: [String]!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        RestNameLable.text = restName
-        
         var address: String = ""
+        
+        RestNameLable.text = restName
         for str in formattedAddress{
             address = address + str + " "
         }
@@ -33,7 +34,32 @@ class CheckInViewController: UIViewController  {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func onCheckInBtn(_ sender: Any) {
+        let post = PFObject(className: "Fav_Restaurands")
+        
+        post["name"] = RestNameLable.text
+        post["address"] = formattedAddress
+        post["user"] = PFUser.current()
+        
+        //TODO: link restaurand id with user: user should have column that contains list of fav restaurands
+        //if post[freq] != 0:
+        // post[freq]++
+        // save posts
+        
+        
+        post.saveInBackground { (success, error) in
+            if success{
+                print(post.objectId)
+                self.dismiss(animated: true, completion: nil)
+                print("Saved Post")
+            }else{
+                print("Failed to save Posts: \(String(describing: error?.localizedDescription))")
+            }
+        }
+        
+        
+    }
+    
     /*
     // MARK: - Navigation
 

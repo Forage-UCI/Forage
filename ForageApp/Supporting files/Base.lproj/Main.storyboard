@@ -626,6 +626,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Check-In"/>
+                                <connections>
+                                    <action selector="onCheckInBtn:" destination="XHX-ce-t8I" eventType="touchUpInside" id="Jif-HF-pWR"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYM-fS-dK9">
                                 <rect key="frame" x="20" y="409" width="62" height="27"/>
