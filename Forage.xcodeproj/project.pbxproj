@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2020BADC24878371001525EE /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2020BADB24878371001525EE /* CheckInViewController.swift */; };
 		2EDA3DF4658DCA519AF3A4E4 /* Pods_ForageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2670A827E4D07D624D9A4A0A /* Pods_ForageTests.framework */; };
 		58394CA6247E252B00BC3053 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58394CA5247E252B00BC3053 /* LoginViewController.swift */; };
 		58394CA8247E2C2600BC3053 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58394CA7247E2C2600BC3053 /* FeedViewController.swift */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		0871650A54C7EEC7F7DE95FF /* Pods_Forage_ForageUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Forage_ForageUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2020BADB24878371001525EE /* CheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewController.swift; sourceTree = "<group>"; };
 		2670A827E4D07D624D9A4A0A /* Pods_ForageTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ForageTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C0538653353291D2A0A958A /* Pods-Forage-ForageUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forage-ForageUITests.debug.xcconfig"; path = "Target Support Files/Pods-Forage-ForageUITests/Pods-Forage-ForageUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4C9A72110DFBEFC8D9182776 /* Pods-ForageTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForageTests.release.xcconfig"; path = "Target Support Files/Pods-ForageTests/Pods-ForageTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -124,6 +126,61 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		2020BADD248783A3001525EE /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				58394CA5247E252B00BC3053 /* LoginViewController.swift */,
+			);
+			path = LoginView;
+			sourceTree = "<group>";
+		};
+		2020BADE248783BA001525EE /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				2020BAE0248784BF001525EE /* SettingsView */,
+				58BF80C3247E2F900055F44F /* ProfileViewController.swift */,
+				58D160B524861412003FC1C1 /* PrivacyViewController.swift */,
+			);
+			path = ProfileView;
+			sourceTree = "<group>";
+		};
+		2020BADF2487844F001525EE /* FeedView */ = {
+			isa = PBXGroup;
+			children = (
+				58394CA7247E2C2600BC3053 /* FeedViewController.swift */,
+				58D160BB248614A6003FC1C1 /* FeedRestaurantCell.swift */,
+			);
+			path = FeedView;
+			sourceTree = "<group>";
+		};
+		2020BAE0248784BF001525EE /* SettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				58D160B72486142C003FC1C1 /* NotificationsViewController.swift */,
+				58D160B1248611A4003FC1C1 /* SettingsViewController.swift */,
+			);
+			path = SettingsView;
+			sourceTree = "<group>";
+		};
+		2020BAE1248784F3001525EE /* CheckInView */ = {
+			isa = PBXGroup;
+			children = (
+				2020BADB24878371001525EE /* CheckInViewController.swift */,
+			);
+			path = CheckInView;
+			sourceTree = "<group>";
+		};
+		2020BAE224878517001525EE /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				5852D4E5247CF81500D09889 /* Assets.xcassets */,
+				5852D4EA247CF81500D09889 /* Info.plist */,
+				5852D4E7247CF81500D09889 /* LaunchScreen.storyboard */,
+				5852D4E2247CF81300D09889 /* Main.storyboard */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
 		5852D4D0247CF81300D09889 = {
 			isa = PBXGroup;
 			children = (
@@ -151,21 +208,15 @@
 			children = (
 				5852D4DC247CF81300D09889 /* AppDelegate.swift */,
 				5852D4DE247CF81300D09889 /* SceneDelegate.swift */,
+				2020BADD248783A3001525EE /* LoginView */,
+				2020BADF2487844F001525EE /* FeedView */,
+				2020BAE1248784F3001525EE /* CheckInView */,
+				2020BADE248783BA001525EE /* ProfileView */,
 				5852D4E0247CF81300D09889 /* ViewController.swift */,
-				5852D4E2247CF81300D09889 /* Main.storyboard */,
-				5852D4E5247CF81500D09889 /* Assets.xcassets */,
-				5852D4E7247CF81500D09889 /* LaunchScreen.storyboard */,
-				5852D4EA247CF81500D09889 /* Info.plist */,
-				58394CA5247E252B00BC3053 /* LoginViewController.swift */,
-				58394CA7247E2C2600BC3053 /* FeedViewController.swift */,
-				58BF80C3247E2F900055F44F /* ProfileViewController.swift */,
 				58BF80C5247E2FA00055F44F /* ExploreViewController.swift */,
-				58D160B1248611A4003FC1C1 /* SettingsViewController.swift */,
 				58D160B3248613AB003FC1C1 /* LocationsViewController.swift */,
-				58D160B524861412003FC1C1 /* PrivacyViewController.swift */,
-				58D160B72486142C003FC1C1 /* NotificationsViewController.swift */,
 				58D160B92486144A003FC1C1 /* LocationCell.swift */,
-				58D160BB248614A6003FC1C1 /* FeedRestaurantCell.swift */,
+				2020BAE224878517001525EE /* Supporting files */,
 			);
 			path = ForageApp;
 			sourceTree = "<group>";
@@ -443,6 +494,7 @@
 				5852D4E1247CF81300D09889 /* ViewController.swift in Sources */,
 				58394CA8247E2C2600BC3053 /* FeedViewController.swift in Sources */,
 				5852D4DD247CF81300D09889 /* AppDelegate.swift in Sources */,
+				2020BADC24878371001525EE /* CheckInViewController.swift in Sources */,
 				58D160BA2486144A003FC1C1 /* LocationCell.swift in Sources */,
 				58BF80C6247E2FA00055F44F /* ExploreViewController.swift in Sources */,
 				58D160B624861412003FC1C1 /* PrivacyViewController.swift in Sources */,
