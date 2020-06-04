@@ -16,6 +16,13 @@ class ExploreViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func didTapListButton(_ sender: Any) {
+        guard let listResturantViewController = storyboard?.instantiateViewController(withIdentifier: "listRestaurantVC") as? ListRestaurantViewController else {return}
+        present(listResturantViewController, animated: true)
+        
+    }
+    
+    
     func locationsPickedLocation(controller: LocationsViewController, latitude: NSNumber, longitude: NSNumber, title: String) {
         
         //locationField.text = title
