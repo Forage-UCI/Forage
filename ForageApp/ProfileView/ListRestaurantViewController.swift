@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
 
 class ListRestaurantViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    var restaurantNames = ["Mcdonald's", "Chick-fil-A", "In-N-Out"]
     override func viewDidLoad() {
         tableView.delegate = self
         tableView.dataSource = self
@@ -38,11 +41,24 @@ class ListRestaurantViewController: UIViewController {
 
 extension ListRestaurantViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return restaurantNames.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "listRestaurantCell", for: indexPath) as! ListRestaurantTableViewCell
+        cell.restaurantName.text = restaurantNames[indexPath.row]
+
+        let PlaceAPIKey = "AIzaSyCiazPfD9GV3Tz0jOjTH3WCSQsKqNMMUBM"
+        https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CnRtAAAATLZNl354RwP_9UKbQ_5Psy40texXePv4oAlgP4qNEkdIrkyse7rPXYGd9D_Uj1rVsQdWT4oRz4QrYAJNpFX7rzqqMlZw2h2E2y5IKMUZ7ouD_SlcHxYq1yL4KbKUv3qtWgTK0A6QbGh87GB3sscrHRIQiG2RrmU_jF4tENr9wGS_YxoUSSDrYjWmrNfeEHSGSc3FyhNLlBU&key=AIzaSyCiazPfD9GV3Tz0jOjTH3WCSQsKqNMMUBM
+        
+        
+        AF.request("https://httpbin.org/image/png").responseImage { response in
+            
+            if case .success(let image) = response.result {
+                cell.restaurantImage.image = image
+                
+            }
+        }
         return cell
     }
     

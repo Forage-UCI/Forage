@@ -10,6 +10,10 @@ import UIKit
 
 class ListRestaurantTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var restaurantName: UILabel!
+    
+    @IBOutlet weak var restaurantImage: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
