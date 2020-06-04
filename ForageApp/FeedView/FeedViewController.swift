@@ -53,6 +53,10 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = FeedTableView.dequeueReusableCell(withIdentifier: "FeedRestaurantCell") as! FeedRestaurantCell
+        
+        //rounded rectangle
+        cell.bgView.layer.cornerRadius = 5;
+        cell.bgView.layer.masksToBounds = true;
         // TODO: Setup FeedCell
         return cell
     }

@@ -1,20 +1,19 @@
 //
-//  FeedRestaurantCell.swift
+//  ExploreRestaurantCell.swift
 //  Forage
 //
-//  Created by Maha Malik on 6/1/20.
+//  Created by Maha Malik on 6/4/20.
 //  Copyright © 2020 Forage-UCI. All rights reserved.
 //
 
 import UIKit
 
-class FeedRestaurantCell: UITableViewCell {
-    @IBOutlet weak var restaurantImageView: UIImageView!
-    @IBOutlet weak var restaurantNameLabel: UILabel!
-    @IBOutlet weak var restaurantTypeLabel: UILabel!
-    @IBOutlet weak var lastVisitedLabel: UILabel!
-    @IBOutlet weak var bgView: UIView!
+class ExploreRestaurantCell: UITableViewCell {
     
+    @IBOutlet weak var restaurantImageView: UIImageView!
+    @IBOutlet weak var numFavFriendsLabel: UILabel!
+    @IBOutlet weak var restaurantType: UILabel!
+    @IBOutlet weak var restaurantName: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
