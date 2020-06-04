@@ -40,6 +40,8 @@ class CheckInViewController: UIViewController  {
         post["name"] = RestNameLable.text
         post["address"] = formattedAddress
         post["user"] = PFUser.current()
+        CheckInBtn.backgroundColor = UIColorFromRGB(rgbValue: 0x63c522)
+        CheckInBtn.setTitle("Checked-In!", for: .normal)
         
         //TODO: link restaurand id with user: user should have column that contains list of fav restaurands
         //if post[freq] != 0:
@@ -58,6 +60,15 @@ class CheckInViewController: UIViewController  {
         }
         
         
+    }
+    
+    func UIColorFromRGB(rgbValue: UInt) -> UIColor {
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
     }
     
     /*
