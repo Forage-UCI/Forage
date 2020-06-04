@@ -3,17 +3,19 @@
 //  ForageApp
 //
 //  Created by Maha Malik on 5/26/20.
+//  Last modified by Yanjie Xu on 6/03/20
 //  Copyright © 2020 Forage-UCI. All rights reserved.
 //
 
 import UIKit
 import Parse
 import UserNotifications
+import GooglePlaces
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
-
+    var locationManager: CLLocationManager?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -23,7 +25,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 configuration.server = "https://forage-uci.herokuapp.com/parse"
             })
         )
+        //Request currented location permissions
+        locationManager = CLLocationManager()
+        locationManager?.delegate = self
+        locationManager?.requestWhenInUseAuthorization()
+        //Google Place APIkey setup
+        GMSPlacesClient.provideAPIKey("AIzaSyAmLjLohCAeN9f7PSE8VImPqn-hxzVAAVk")
         
+        //Notification setup
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
             print("granted: (\(granted)")
         }
