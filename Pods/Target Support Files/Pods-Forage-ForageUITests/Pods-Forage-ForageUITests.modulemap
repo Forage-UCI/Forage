@@ -1,0 +1,6 @@
+framework module Pods_Forage_ForageUITests {
+  umbrella header "Pods-Forage-ForageUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
