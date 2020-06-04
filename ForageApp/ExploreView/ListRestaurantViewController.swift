@@ -56,7 +56,7 @@ extension ListRestaurantViewController: UITableViewDelegate, UITableViewDataSour
         AF.request("https://httpbin.org/image/png").responseImage { response in
             
             if case .success(let image) = response.result {
-                cell.restaurantImage.image = image
+                cell.restaurantImageView.image = image
                 
             }
         }
