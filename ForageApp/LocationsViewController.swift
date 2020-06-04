@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import GooglePlaces
 // ----- TODO: Add protocol to communicate with PhotoMapViewController
 protocol LocationsViewControllerDelegate: class {
     func locationsPickedLocation(controller: LocationsViewController, latitude: NSNumber, longitude: NSNumber, title: String)
@@ -20,9 +20,6 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
     
     // ––––– TODO: Add delegate
     weak var delegate: LocationsViewControllerDelegate!
-    
-
-    
     
     // ––––– TODO: Fill in actual CLIENT_ID and CLIENT_SECRET
     let CLIENT_ID = "QA1L0Z0ZNA2QVEEDHFPQWK0I5F1DE3GPLSNW4BZEBGJXUCFL"

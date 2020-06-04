@@ -258,6 +258,7 @@
 				5852D4D6247CF81300D09889 /* Frameworks */,
 				5852D4D7247CF81300D09889 /* Resources */,
 				4C839431FF3891797C9BF6A6 /* [CP] Embed Pods Frameworks */,
+				F3A88CF22F2CB6B028C12095 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -296,6 +297,7 @@
 				5852D4F7247CF81600D09889 /* Frameworks */,
 				5852D4F8247CF81600D09889 /* Resources */,
 				C071BD023D7C069B34F4CD19 /* [CP] Embed Pods Frameworks */,
+				5B90F4AFAEAA7C3B1BB5A595 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -417,6 +419,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Forage/Pods-Forage-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		5B90F4AFAEAA7C3B1BB5A595 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Forage-ForageUITests/Pods-Forage-ForageUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Forage-ForageUITests/Pods-Forage-ForageUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Forage-ForageUITests/Pods-Forage-ForageUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6EA3268D61C4C6C9EDD2F72A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -476,6 +495,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Forage-ForageUITests/Pods-Forage-ForageUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3A88CF22F2CB6B028C12095 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Forage/Pods-Forage-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Forage/Pods-Forage-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Forage/Pods-Forage-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
