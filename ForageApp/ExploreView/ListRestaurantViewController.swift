@@ -50,13 +50,13 @@ extension ListRestaurantViewController: UITableViewDelegate, UITableViewDataSour
         cell.numFavFriendsLabel.text = String(Int.random(in: 1...45)) //dummy data for number of friends liking it 
 
         let PlaceAPIKey = "AIzaSyCiazPfD9GV3Tz0jOjTH3WCSQsKqNMMUBM"
-        "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CnRtAAAATLZNl354RwP_9UKbQ_5Psy40texXePv4oAlgP4qNEkdIrkyse7rPXYGd9D_Uj1rVsQdWT4oRz4QrYAJNpFX7rzqqMlZw2h2E2y5IKMUZ7ouD_SlcHxYq1yL4KbKUv3qtWgTK0A6QbGh87GB3sscrHRIQiG2RrmU_jF4tENr9wGS_YxoUSSDrYjWmrNfeEHSGSc3FyhNLlBU&key=AIzaSyCiazPfD9GV3Tz0jOjTH3WCSQsKqNMMUBM"
+        //"https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CnRtAAAATLZNl354RwP_9UKbQ_5Psy40texXePv4oAlgP4qNEkdIrkyse7rPXYGd9D_Uj1rVsQdWT4oRz4QrYAJNpFX7rzqqMlZw2h2E2y5IKMUZ7ouD_SlcHxYq1yL4KbKUv3qtWgTK0A6QbGh87GB3sscrHRIQiG2RrmU_jF4tENr9wGS_YxoUSSDrYjWmrNfeEHSGSc3FyhNLlBU&key=AIzaSyCiazPfD9GV3Tz0jOjTH3WCSQsKqNMMUBM"
         
         
         AF.request("https://httpbin.org/image/png").responseImage { response in
             
             if case .success(let image) = response.result {
-                cell.restaurantImageView.image = image
+                cell.restaurantImage.image = image
                 
             }
         }

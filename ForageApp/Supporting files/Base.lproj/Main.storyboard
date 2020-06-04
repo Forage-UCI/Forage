@@ -101,10 +101,10 @@
                         <viewLayoutGuide key="safeArea" id="umb-MC-WTb"/>
                     </view>
                     <navigationItem key="navigationItem" title="Explore Restuarants" id="08C-1Y-LQ2">
-                        <barButtonItem key="leftBarButtonItem" title="List" id="hQX-Lf-g9m">
-                            <color key="tintColor" red="0.88299465672279798" green="0.6262522094216415" blue="0.25022593837581669" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <barButtonItem key="leftBarButtonItem" title="List" id="CdK-Lp-sld">
+                            <color key="tintColor" red="0.92268538479999995" green="0.61384171249999997" blue="0.12126500160000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
-                                <segue destination="ZEP-FC-HQg" kind="presentation" id="Kkq-WO-N6A"/>
+                                <segue destination="ZEP-FC-HQg" kind="presentation" id="cip-yb-IQz"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="magnifyingglass" catalog="system" id="7WT-Wu-wj6">
@@ -195,7 +195,7 @@
                                         <gestureRecognizers/>
                                         <connections>
                                             <outlet property="numFavFriendsLabel" destination="esh-Aw-zaQ" id="gPT-gf-Avz"/>
-                                            <outlet property="restaurantImage" destination="DQv-U0-ZWl" id="9LF-4E-wbh"/>
+                                            <outlet property="restaurantImage" destination="DQv-U0-ZWl" id="5ga-0L-DSp"/>
                                             <outlet property="restaurantImageView" destination="DQv-U0-ZWl" id="58Y-UY-5YC"/>
                                             <outlet property="restaurantName" destination="QnI-A1-BkU" id="AzA-sZ-A8M"/>
                                             <outlet property="restaurantType" destination="xu1-cG-UFW" id="UyH-4N-c0i"/>
@@ -1007,7 +1007,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="EPa-AL-J9l"/>
+        <segue reference="6m6-k2-mxa"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Honda-Ya" width="748" height="420"/>
