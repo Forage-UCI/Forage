@@ -8,6 +8,7 @@
 
 import UIKit
 import GooglePlaces
+
 // ----- TODO: Add protocol to communicate with PhotoMapViewController
 protocol LocationsViewControllerDelegate: class {
     func locationsPickedLocation(controller: LocationsViewController, latitude: NSNumber, longitude: NSNumber, title: String)
