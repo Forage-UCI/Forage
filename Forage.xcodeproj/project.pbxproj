@@ -15,6 +15,7 @@
 		58394CA6247E252B00BC3053 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58394CA5247E252B00BC3053 /* LoginViewController.swift */; };
 		58394CA8247E2C2600BC3053 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58394CA7247E2C2600BC3053 /* FeedViewController.swift */; };
 		5849A7AF248A247A00789F42 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5849A7AE248A247A00789F42 /* Models.swift */; };
+		5849A7B1248AC1B700789F42 /* PrivacyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5849A7B0248AC1B700789F42 /* PrivacyCell.swift */; };
 		5852D4DD247CF81300D09889 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5852D4DC247CF81300D09889 /* AppDelegate.swift */; };
 		5852D4DF247CF81300D09889 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5852D4DE247CF81300D09889 /* SceneDelegate.swift */; };
 		5852D4E4247CF81300D09889 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5852D4E2247CF81300D09889 /* Main.storyboard */; };
@@ -65,6 +66,7 @@
 		58394CA5247E252B00BC3053 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		58394CA7247E2C2600BC3053 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		5849A7AE248A247A00789F42 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		5849A7B0248AC1B700789F42 /* PrivacyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyCell.swift; sourceTree = "<group>"; };
 		5852D4D9247CF81300D09889 /* Forage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Forage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5852D4DC247CF81300D09889 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5852D4DE247CF81300D09889 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -147,7 +149,6 @@
 			children = (
 				2020BAE0248784BF001525EE /* SettingsView */,
 				58BF80C3247E2F900055F44F /* ProfileViewController.swift */,
-				58D160B524861412003FC1C1 /* PrivacyViewController.swift */,
 			);
 			path = ProfileView;
 			sourceTree = "<group>";
@@ -166,6 +167,8 @@
 			children = (
 				58D160B72486142C003FC1C1 /* NotificationsViewController.swift */,
 				58D160B1248611A4003FC1C1 /* SettingsViewController.swift */,
+				58D160B524861412003FC1C1 /* PrivacyViewController.swift */,
+				5849A7B0248AC1B700789F42 /* PrivacyCell.swift */,
 			);
 			path = SettingsView;
 			sourceTree = "<group>";
@@ -558,6 +561,7 @@
 				58D160B82486142C003FC1C1 /* NotificationsViewController.swift in Sources */,
 				582DD2EE248A0A9100CDA639 /* FavoriteViewController.swift in Sources */,
 				5852D4DF247CF81300D09889 /* SceneDelegate.swift in Sources */,
+				5849A7B1248AC1B700789F42 /* PrivacyCell.swift in Sources */,
 				58D160BC248614A6003FC1C1 /* FeedRestaurantCell.swift in Sources */,
 				5849A7AF248A247A00789F42 /* Models.swift in Sources */,
 				58D160B2248611A4003FC1C1 /* SettingsViewController.swift in Sources */,
