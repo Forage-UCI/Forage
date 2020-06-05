@@ -32,16 +32,16 @@ Forage is a restaurant social media app that allows users to browse dining optio
 * User can view their own favorite list
 * User can view friends' favorite restaurant/check-in list 
 * User can randomize a choice within the fav list
-* App incorporates Google Place API
+* App incorporates Foursquare API
 * User can view the map with restaurant locations (MapKit)
 * TabView Controller is used to separate the functions
-* User can add new friends
 * User can stay logged in 
 * User can refresh feed
 
 **Optional Nice-to-have Stories**
 
 * Restaurant categories
+* User can add new friends
 * User can sort the feed based on price, distance, number of favorites 
 * User has wish list of restaurants they wish to visit 
 * User can favorite restaurant through home screen (notification) - widget 
