@@ -23,11 +23,11 @@ class ExploreViewController: UIViewController, MKMapViewDelegate {
         mapView.delegate = self
     }
     
-    @IBAction func didTapListButton(_ sender: Any) {
-        guard let listResturantViewController = storyboard?.instantiateViewController(withIdentifier: "listRestaurantVC") as? ListRestaurantViewController else {return}
-        present(listResturantViewController, animated: true)
-        
-    }
+//    @IBAction func didTapListButton(_ sender: Any) {
+//        guard let listResturantViewController = storyboard?.instantiateViewController(withIdentifier: "listRestaurantVC") as? ListRestaurantViewController else {return}
+//        present(listResturantViewController, animated: true)
+//
+//    }
     
     /* ------ TODO: Set initial location after launching app */
     func setInitialLocation() {

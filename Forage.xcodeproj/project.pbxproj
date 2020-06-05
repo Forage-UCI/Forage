@@ -11,8 +11,10 @@
 		2EDA3DF4658DCA519AF3A4E4 /* Pods_ForageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2670A827E4D07D624D9A4A0A /* Pods_ForageTests.framework */; };
 		582DD2EC248A039100CDA639 /* ListLocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582DD2EB248A039100CDA639 /* ListLocationsViewController.swift */; };
 		582DD2EE248A0A9100CDA639 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582DD2ED248A0A9100CDA639 /* FavoriteViewController.swift */; };
+		582DD2F0248A1E0100CDA639 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582DD2EF248A1E0100CDA639 /* NetworkService.swift */; };
 		58394CA6247E252B00BC3053 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58394CA5247E252B00BC3053 /* LoginViewController.swift */; };
 		58394CA8247E2C2600BC3053 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58394CA7247E2C2600BC3053 /* FeedViewController.swift */; };
+		5849A7AF248A247A00789F42 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5849A7AE248A247A00789F42 /* Models.swift */; };
 		5852D4DD247CF81300D09889 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5852D4DC247CF81300D09889 /* AppDelegate.swift */; };
 		5852D4DF247CF81300D09889 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5852D4DE247CF81300D09889 /* SceneDelegate.swift */; };
 		5852D4E4247CF81300D09889 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5852D4E2247CF81300D09889 /* Main.storyboard */; };
@@ -59,8 +61,10 @@
 		4F9483C98F9A6101D4D0980C /* Pods-ForageTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForageTests.debug.xcconfig"; path = "Target Support Files/Pods-ForageTests/Pods-ForageTests.debug.xcconfig"; sourceTree = "<group>"; };
 		582DD2EB248A039100CDA639 /* ListLocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLocationsViewController.swift; sourceTree = "<group>"; };
 		582DD2ED248A0A9100CDA639 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		582DD2EF248A1E0100CDA639 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		58394CA5247E252B00BC3053 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		58394CA7247E2C2600BC3053 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		5849A7AE248A247A00789F42 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		5852D4D9247CF81300D09889 /* Forage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Forage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5852D4DC247CF81300D09889 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5852D4DE247CF81300D09889 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -220,6 +224,8 @@
 				58D160B3248613AB003FC1C1 /* LocationsViewController.swift */,
 				58D160B92486144A003FC1C1 /* LocationCell.swift */,
 				2020BAE224878517001525EE /* Supporting files */,
+				582DD2EF248A1E0100CDA639 /* NetworkService.swift */,
+				5849A7AE248A247A00789F42 /* Models.swift */,
 			);
 			path = ForageApp;
 			sourceTree = "<group>";
@@ -543,6 +549,7 @@
 				58394CA6247E252B00BC3053 /* LoginViewController.swift in Sources */,
 				58D160B4248613AB003FC1C1 /* LocationsViewController.swift in Sources */,
 				58394CA8247E2C2600BC3053 /* FeedViewController.swift in Sources */,
+				582DD2F0248A1E0100CDA639 /* NetworkService.swift in Sources */,
 				5852D4DD247CF81300D09889 /* AppDelegate.swift in Sources */,
 				2020BADC24878371001525EE /* CheckInViewController.swift in Sources */,
 				58D160BA2486144A003FC1C1 /* LocationCell.swift in Sources */,
@@ -552,6 +559,7 @@
 				582DD2EE248A0A9100CDA639 /* FavoriteViewController.swift in Sources */,
 				5852D4DF247CF81300D09889 /* SceneDelegate.swift in Sources */,
 				58D160BC248614A6003FC1C1 /* FeedRestaurantCell.swift in Sources */,
+				5849A7AF248A247A00789F42 /* Models.swift in Sources */,
 				58D160B2248611A4003FC1C1 /* SettingsViewController.swift in Sources */,
 				58FEF60E24898C82005F929E /* ExploreRestaurantCell.swift in Sources */,
 			);
