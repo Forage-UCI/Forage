@@ -92,11 +92,14 @@ class CheckInViewController: UIViewController  {
     }
     
     @IBAction func onCheckInBtn(_ sender: Any) {
-        let post = PFObject(className: "Fav_Restaurands")
+        let post = PFObject(className: "CheckInHistory")
         
         post["name"] = RestNameLable.text
         post["address"] = formattedAddress
+        post["placeID"] = placeID
         post["user"] = PFUser.current()
+        
+        
         CheckInBtn.backgroundColor = UIColorFromRGB(rgbValue: 0x63c522)
         CheckInBtn.setTitle("Checked-In!", for: .normal)
         
@@ -108,7 +111,7 @@ class CheckInViewController: UIViewController  {
         
         post.saveInBackground { (success, error) in
             if success{
-                print(post.objectId)
+                PFUser.current()?.addUniqueObject(self.placeID!, forKey: "favRestaurantsList")
                 self.dismiss(animated: true, completion: nil)
                 print("Saved Post")
             }else{
