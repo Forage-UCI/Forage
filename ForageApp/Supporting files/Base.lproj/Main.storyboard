@@ -346,7 +346,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1Lc-hL-ipm">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
@@ -554,8 +554,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="FeedTableView" destination="7ON-RE-qv5" id="sXz-SB-L9m"/>
-                        <outlet property="NavBarCheckInBtn" destination="SzN-a0-69C" id="4lM-vD-yQB"/>
+                        <outlet property="FeedTableView" destination="7ON-RE-qv5" id="uuc-KO-Mwb"/>
+                        <outlet property="NavBarCheckInBtn" destination="SzN-a0-69C" id="pUQ-1e-QzI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o0Z-t2-PSj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -751,7 +751,7 @@
         <!--Home-->
         <scene sceneID="pIV-KH-82J">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pza-Fa-W5g" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="RestaurantNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="pza-Fa-W5g" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" selectedImage="house.fill" id="5V7-oL-CcR"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="rto-80-jnr">

@@ -19,14 +19,14 @@ struct Business: Codable {
     let distance: Double
 }
 
-struct RestaurantView {
+struct RestaurantListViewModel {
     let name: String
     let imageUrl: URL
     let distance: String
     let id: String
 }
 
-extension RestaurantView {
+extension RestaurantListViewModel {
     init(business: Business){
         self.name = business.name
         self.id = business.id
