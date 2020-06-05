@@ -8,6 +8,8 @@
 
 import UIKit
 import Parse
+import AlamofireImage
+
 class CheckInViewController: UIViewController  {
 
     @IBOutlet weak var RestNameLable: UILabel!
@@ -16,22 +18,74 @@ class CheckInViewController: UIViewController  {
     @IBOutlet weak var AddressLabel: UILabel!
     @IBOutlet weak var CheckInBtn: UIButton!
     
+
+    var venue: NSDictionary = [:]
+    let CLIENT_ID = "QA1L0Z0ZNA2QVEEDHFPQWK0I5F1DE3GPLSNW4BZEBGJXUCFL"
+    let CLIENT_SECRET = "W2AOE1TYC4MHK5SZYOUGX0J3LVRALMPB4CXT3ZH21ZCPUMCU"
+    
     var restName: String!
     var formattedAddress: [String]!
-    
+    var placeID: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        loadData()
+    
+    }
+    
+    func loadData(){
         var address: String = ""
-        
         RestNameLable.text = restName
         for str in formattedAddress{
             address = address + str + " "
         }
-        
         AddressLabel.text = address
-        // Do any additional setup after loading the view.
+        requestPlaceDetails()
+        
+    }
+    
+    func requestPlaceDetails(){
+        let baseUrlString = "https://api.foursquare.com/v2/venues/"
+        let queryString = "\(placeID!)?&client_id=\(CLIENT_ID)&client_secret=\(CLIENT_SECRET)&v=20141020"
+        let url = URL(string: baseUrlString + queryString)!
+        let request = URLRequest(url: url)
+
+        let session = URLSession(
+            configuration: URLSessionConfiguration.default,
+            delegate:nil,
+            delegateQueue:OperationQueue.main
+        )
+        
+        let task : URLSessionDataTask = session.dataTask(with: request,
+            completionHandler: { (dataOrNil, response, error) in
+                if let data = dataOrNil {
+                    if let responseDictionary = try! JSONSerialization.jsonObject(
+                        with: data, options:[]) as? NSDictionary {
+                            //NSLog("response: \(responseDictionary)")
+                        self.venue = responseDictionary.value(forKeyPath: "response.venue") as! NSDictionary
+                        print(self.venue)
+                        //You can add other function like getPhotos to get more detail place infos
+                        self.getPhotosFromVenue()
+                    }
+                }
+        });
+        task.resume()
+    }
+    
+    func getPhotosFromVenue(){
+        let photos_count = venue.value(forKeyPath: "photos.count") as! Int
+        if photos_count > 0{
+            let photos_groups = venue.value(forKeyPath: "photos.groups") as! NSArray
+            let photos = (photos_groups[0] as AnyObject).value(forKey: "items") as! NSArray
+            let photo = photos[0] as! NSDictionary
+            let prefix = photo.value(forKey: "prefix") as! String
+            let suffix = photo.value(forKey: "suffix") as! String
+            print(prefix)
+            print(suffix)
+            let url = URL(string: prefix+"500x300"+suffix)!
+            RestPhotoView.af.setImage(withURL: url)
+        }
+        
     }
     
     @IBAction func onCheckInBtn(_ sender: Any) {
