@@ -9,15 +9,21 @@
 
 import UIKit
 import Parse
+import Moya
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    
+    let service = MoyaProvider<YelpService.BusinessesProvider>()
+    let jsonDecoder = JSONDecoder()
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        
         guard let windowScene = (scene as? UIWindowScene) else {return}
         if PFUser.current() != nil{
             let main = UIStoryboard(name: "Main", bundle:  nil)
@@ -27,6 +33,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             self.window?.rootViewController = feedNavigationController
             print("window \(String(describing: window))")
         }
+        
+        loadBusinesses()
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -55,6 +64,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+    }
+    
+    private func loadBusinesses(){
+        //Client ID: hsFA67SlH5SedrvXHSb9fg
+        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+        service.request(.search(lat: 33.6405, long: -117.8443)) { (result) in
+            switch result {
+                case .success(let response):
+                    let root = try? self.jsonDecoder.decode(Root.self, from: response.data)
+                    let viewModels = root?.businesses.compactMap(RestaurantListViewModel.init)
+                    if let nav = self.window?.rootViewController as? UINavigationController, let restaurantListViewController = nav.topViewController as? FeedViewController {
+                        restaurantListViewController.viewModels = viewModels ?? []
+                }
+                case .failure(let error):
+                    print("Error: \(error)")
+            }
+        }
     }
 
 

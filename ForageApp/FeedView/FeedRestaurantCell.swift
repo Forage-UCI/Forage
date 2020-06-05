@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class FeedRestaurantCell: UITableViewCell {
     @IBOutlet weak var restaurantImageView: UIImageView!
@@ -23,6 +24,12 @@ class FeedRestaurantCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func configure(with viewModel: RestaurantListViewModel) {
+        restaurantImageView.af_setImage(withURL: viewModel.imageUrl)
+        restaurantNameLabel.text = viewModel.name
+        distanceLabel.text = viewModel.distance
     }
 
 }

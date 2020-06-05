@@ -18,23 +18,12 @@ import Moya
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
     var locationManager: CLLocationManager?
-    let service = MoyaProvider<YelpService.BusinessesProvider>()
-    let jsonDecoder = JSONDecoder()
+//    let service = MoyaProvider<YelpService.BusinessesProvider>()
+//    let jsonDecoder = JSONDecoder()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        //Client ID: hsFA67SlH5SedrvXHSb9fg
-        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
-        service.request(.search(lat: 33.6405, long: -117.8443)) { (result) in
-            switch result {
-                case .success(let response):
-                    let root = try? self.jsonDecoder.decode(Root.self, from: response.data)
-                    print(root)
-                case .failure(let error):
-                    print("Error: \(error)")
-            }
-        }
         
         Parse.initialize(
             with: ParseClientConfiguration(block: { (configuration: ParseMutableClientConfiguration) -> Void in
