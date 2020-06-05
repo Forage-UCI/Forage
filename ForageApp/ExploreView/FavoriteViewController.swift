@@ -2,7 +2,7 @@
 //  FavoriteViewController.swift
 //  Forage
 //
-//  Created by Maha Malik on 6/3/20.
+//  Created by Maha Malik on 6/4/20.
 //  Copyright © 2020 Forage-UCI. All rights reserved.
 //
 
@@ -11,13 +11,26 @@ import UIKit
 class FavoriteViewController: UIViewController {
 
     @IBOutlet weak var favBtn: UIButton!
-    @IBOutlet weak var restaurantName: UILabel!
-    @IBOutlet weak var restuarantAddress: UILabel!
+    @IBOutlet weak var reviewTextField: UITextView!
     @IBOutlet weak var restaurantImageView: UIImageView!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var restaurantName: UILabel!
+    
+    var restName: String!
+    var formattedAddress: [String]!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        var address: String = ""
+        
+        restaurantName.text = restName
+        for str in formattedAddress{
+            address = address + str + " "
+        }
+        
+        addressLabel.text = address
         // Do any additional setup after loading the view.
     }
     

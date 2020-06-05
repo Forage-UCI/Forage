@@ -7,13 +7,20 @@
 //
 
 import UIKit
+import MapKit
 
-class ExploreViewController: UIViewController {
+class ExploreViewController: UIViewController, MKMapViewDelegate {
 
+    @IBOutlet weak var mapView: MKMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.setInitialLocation()
+        }
+        mapView.delegate = self
     }
     
     @IBAction func didTapListButton(_ sender: Any) {
@@ -22,6 +29,21 @@ class ExploreViewController: UIViewController {
         
     }
     
+    /* ------ TODO: Set initial location after launching app */
+    func setInitialLocation() {
+       //UCI latitude and longitude
+       let mapCenter = CLLocationCoordinate2D(latitude: 33.6405, longitude: -117.8443)
+
+       //One degree of latitude is approximately 111 kilometers (69 miles) at all times.
+       let mapSpan = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+       
+       //Assign mapCenter and mapSan to region of mapView
+       let region = MKCoordinateRegion(center: mapCenter, span: mapSpan)
+       
+       //set animated property to true to animate the transition to the region
+       self.mapView.setRegion(region, animated: true)
+       
+    }
     
     func locationsPickedLocation(controller: LocationsViewController, latitude: NSNumber, longitude: NSNumber, title: String) {
         
