@@ -30,6 +30,9 @@ class CheckInViewController: UIViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
+        
+        RestPhotoView.layer.cornerRadius = 5;
+        RestPhotoView.layer.masksToBounds = true;
     
     }
     

@@ -176,8 +176,8 @@
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.70923669199999995" blue="0.28338329849999999" alpha="0.55311949819999995" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="USER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NIB-VF-b2W">
-                                <rect key="frame" x="179" y="276.5" width="58" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="test" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NIB-VF-b2W">
+                                <rect key="frame" x="187" y="276.5" width="42" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="22"/>
                                 <color key="textColor" red="0.88016110749999998" green="0.62424255240000004" blue="0.24942295789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -218,7 +218,7 @@
                         <barButtonItem key="rightBarButtonItem" image="gear" catalog="system" id="jAf-vw-rpX">
                             <color key="tintColor" red="0.88016110749999998" green="0.62424255240000004" blue="0.24942295789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
-                                <segue destination="6rx-AH-X5Z" kind="presentation" id="LmP-mH-uo3"/>
+                                <segue destination="6rx-AH-X5Z" kind="presentation" id="fqK-at-IaJ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -287,6 +287,9 @@
                                 <state key="normal" title="Contact Us">
                                     <color key="titleColor" red="0.88016110749999998" green="0.62424255240000004" blue="0.24942295789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="onContactBtn:" destination="Bex-6c-cD8" eventType="touchUpInside" id="sUX-Xo-Klv"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1S-qq-Int">
                                 <rect key="frame" x="20" y="609" width="374" height="79"/>
@@ -312,23 +315,54 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="USER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxm-Z1-JLV">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="test" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxm-Z1-JLV">
                                 <rect key="frame" x="179" y="220" width="58" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="22"/>
                                 <color key="textColor" red="0.88016110749999998" green="0.62424255240000004" blue="0.24942295789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KDa-pW-7GI">
+                                <rect key="frame" x="31" y="305" width="346" height="190"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O2h-eQ-WKt">
+                                        <rect key="frame" x="227" y="137" width="51" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="27"/>
+                                        <state key="normal" title="Call">
+                                            <color key="titleColor" red="0.82879263160000005" green="0.4527602792" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iUI-Dy-79F">
+                                        <rect key="frame" x="71" y="137" width="82" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" red="0.82879263160000005" green="0.4527602792" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onCancelBtn:" destination="Bex-6c-cD8" eventType="touchUpInside" id="Q0Z-cJ-pwg"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Call (800) 123-4567?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mu4-zX-cTx">
+                                        <rect key="frame" x="8" y="68" width="330" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                        <color key="textColor" red="0.82879263160000005" green="0.4527602792" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.86352204623287676" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="mQT-pc-C8S"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Settings" id="8wT-9N-TLB">
-                        <barButtonItem key="leftBarButtonItem" image="arrow.left" catalog="system" id="9SD-aU-UsV">
-                            <color key="tintColor" red="0.8801611075129534" green="0.62424255235332338" blue="0.24942295785428223" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Settings" largeTitleDisplayMode="always" id="8wT-9N-TLB"/>
                     <connections>
+                        <outlet property="callView" destination="KDa-pW-7GI" id="dwf-Kf-gPj"/>
+                        <outlet property="cancelButton" destination="iUI-Dy-79F" id="NfZ-pG-gae"/>
                         <outlet property="profileImageView" destination="2lG-mH-PrX" id="dfA-2s-zmC"/>
                         <outlet property="usernameLabel" destination="vxm-Z1-JLV" id="YaJ-eW-7GL"/>
                     </connections>
@@ -346,7 +380,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1Lc-hL-ipm">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <rect key="frame" x="0.0" y="-56" width="414" height="898"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
@@ -452,9 +486,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="63R-uX-i7R"/>
                     </view>
-                    <navigationItem key="navigationItem" title="About" id="ezl-5T-AVe">
-                        <barButtonItem key="leftBarButtonItem" image="arrow.left" catalog="system" id="6jx-KF-02O"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="About" id="ezl-5T-AVe"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YvI-dx-a9L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -775,6 +807,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6rx-AH-X5Z" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="gom-Vv-eqh"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uCG-aP-1ve">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1118,7 +1151,6 @@
         <image name="Logo" width="750" height="420"/>
         <image name="Logo Image" width="180" height="172"/>
         <image name="Logo Name" width="750" height="102"/>
-        <image name="arrow.left" catalog="system" width="128" height="98"/>
         <image name="gear" catalog="system" width="128" height="119"/>
         <image name="house" catalog="system" width="128" height="110"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
