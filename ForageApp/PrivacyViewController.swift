@@ -10,9 +10,15 @@ import UIKit
 
 class PrivacyViewController: UIViewController {
 
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var phoneLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        userNameLabel.text = "John Doe"
+        emailLabel.text = "johndoe@gmail.com"
+        phoneLabel.text = "(949)123-4567"
         // Do any additional setup after loading the view.
     }
     

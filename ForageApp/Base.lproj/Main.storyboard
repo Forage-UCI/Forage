@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -286,6 +286,9 @@
                                 <state key="normal" title="Privacy Settings">
                                     <color key="titleColor" red="0.88016110749999998" green="0.62424255240000004" blue="0.24942295789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <segue destination="i43-wz-puW" kind="presentation" id="jsj-Oc-Rra"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgo-ZP-op0">
                                 <rect key="frame" x="20" y="522" width="374" height="79"/>
@@ -349,21 +352,69 @@
             <objects>
                 <viewController id="h0n-MD-HPh" customClass="PrivacyViewController" customModule="Forage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kd4-W5-vL9">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Insert Table with Headers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SXm-NG-ZMD">
-                                <rect key="frame" x="110" y="271" width="195" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTC-9o-iMe">
+                                <rect key="frame" x="43" y="119" width="84" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GCY-Ol-w9D">
+                                <rect key="frame" x="81" y="173" width="46" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LxU-sT-Ovq">
+                                <rect key="frame" x="73" y="227" width="54" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jfa-8x-GT9">
+                                <rect key="frame" x="155" y="119" width="42" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTg-8G-WQz">
+                                <rect key="frame" x="155" y="172.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGP-AQ-RCr">
+                                <rect key="frame" x="155" y="226.5" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="EGP-AQ-RCr" firstAttribute="top" secondItem="gTg-8G-WQz" secondAttribute="bottom" constant="33" id="B0y-hd-tpR"/>
+                            <constraint firstItem="Jfa-8x-GT9" firstAttribute="leading" secondItem="jTC-9o-iMe" secondAttribute="trailing" constant="28" id="C7G-vK-9AL"/>
+                            <constraint firstItem="LxU-sT-Ovq" firstAttribute="leading" secondItem="yX5-4c-9lh" secondAttribute="leading" constant="73" id="QLU-0B-5OA"/>
+                            <constraint firstItem="EGP-AQ-RCr" firstAttribute="leading" secondItem="LxU-sT-Ovq" secondAttribute="trailing" constant="28" id="XUn-XF-fHn"/>
+                            <constraint firstItem="gTg-8G-WQz" firstAttribute="top" secondItem="Jfa-8x-GT9" secondAttribute="bottom" constant="33" id="bFr-td-TZQ"/>
+                            <constraint firstItem="GCY-Ol-w9D" firstAttribute="top" secondItem="jTC-9o-iMe" secondAttribute="bottom" constant="33" id="ccg-FI-MHs"/>
+                            <constraint firstItem="jTC-9o-iMe" firstAttribute="leading" secondItem="yX5-4c-9lh" secondAttribute="leading" constant="43" id="dz9-sl-Jjl"/>
+                            <constraint firstItem="LxU-sT-Ovq" firstAttribute="top" secondItem="GCY-Ol-w9D" secondAttribute="bottom" constant="33" id="eAn-gV-YGF"/>
+                            <constraint firstItem="jTC-9o-iMe" firstAttribute="top" secondItem="yX5-4c-9lh" secondAttribute="top" constant="63" id="hkk-hC-JRz"/>
+                            <constraint firstItem="Jfa-8x-GT9" firstAttribute="top" secondItem="yX5-4c-9lh" secondAttribute="top" constant="63" id="jSa-QB-rCp"/>
+                            <constraint firstItem="GCY-Ol-w9D" firstAttribute="leading" secondItem="yX5-4c-9lh" secondAttribute="leading" constant="81" id="sLH-nQ-zAe"/>
+                            <constraint firstItem="gTg-8G-WQz" firstAttribute="leading" secondItem="GCY-Ol-w9D" secondAttribute="trailing" constant="28" id="uew-Qv-awt"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="yX5-4c-9lh"/>
                     </view>
                     <navigationItem key="navigationItem" title="Privacy Settings" id="Oxg-ET-ZWO"/>
+                    <connections>
+                        <outlet property="emailLabel" destination="gTg-8G-WQz" id="74m-66-odg"/>
+                        <outlet property="phoneLabel" destination="EGP-AQ-RCr" id="Wee-z1-Xzo"/>
+                        <outlet property="userNameLabel" destination="Jfa-8x-GT9" id="Pr5-UU-DIu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nIu-BG-cGb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -646,7 +697,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="i43-wz-puW" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qdS-DY-gGQ">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
