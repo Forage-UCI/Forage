@@ -86,6 +86,7 @@ class CheckInViewController: UIViewController  {
             print(prefix)
             print(suffix)
             let url = URL(string: prefix+"500x300"+suffix)!
+            print(url)
             RestPhotoView.af.setImage(withURL: url)
         }
         

@@ -31,5 +31,7 @@ class FeedRestaurantCell: UITableViewCell {
         restaurantNameLabel.text = viewModel.name
         distanceLabel.text = viewModel.distance
     }
+    
+    
 
 }
