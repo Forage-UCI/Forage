@@ -3,6 +3,7 @@
 //  Forage
 //
 //  Created by Maha Malik on 6/1/20.
+//  Modified by Yanjie Xu on 6/5/20.
 //  Copyright © 2020 Forage-UCI. All rights reserved.
 //
 
@@ -44,11 +45,12 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
         fetchLocations(query: "temp")
     }
     
+    //Get Current Locations
     func getCurrentLocation(){
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
             CLLocationManager.authorizationStatus() == .authorizedAlways {
             currentLoc = locationManager.location
-            print("lat: \(currentLoc.coordinate.latitude)  lng: \(currentLoc.coordinate.longitude)")
+            //print("lat: \(currentLoc.coordinate.latitude)  lng: \(currentLoc.coordinate.longitude)")
         }
     }
 
@@ -75,23 +77,12 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
         // This is the selected venue
         let venue = results[(indexPath as NSIndexPath).row] as! NSDictionary
         
-        print(venue)
-        
-        // Lat and lng of venue selected
-        let lat = venue.value(forKeyPath: "location.lat") as! NSNumber
-        let lng = venue.value(forKeyPath: "location.lng") as! NSNumber
-        let name = venue.value(forKeyPath: "name") as! String
-        
         /*-------TODO--------*/
         //Set the latitude and longitude of the venue and send it to the protocol
         //delegate.locationsPickedLocation(controller: self, latitude: lat, longitude: lng, title: name)
         
         // Return to the PhotoMapViewController with the lat and lng of venue
         
-        let latString = "\(lat)"
-        let lngString = "\(lng)"
-        
-        print(latString + " " + lngString)
         self.performSegue(withIdentifier: "CheckinSegue", sender: tableView.cellForRow(at: indexPath))
         
     }
@@ -143,11 +134,13 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
         
         if segue.identifier == "CheckinSegue"{
             let checkInViewController = segue.destination as! CheckInViewController
-            
+            print(venue)
             let name = venue.value(forKeyPath: "name") as! String
             let formattedAdress = venue.value(forKeyPath: "location.formattedAddress") as! [String]?
+            let id = venue.value(forKey: "id") as! String
             checkInViewController.restName = name
             checkInViewController.formattedAddress = formattedAdress
+            checkInViewController.placeID = id
         }
         tableView.deselectRow(at: indexPath, animated: true)
 //        self.dismiss(animated: true, completion: nil)
