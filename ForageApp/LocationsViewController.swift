@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import GooglePlaces
+import CoreLocation
 
 // ----- TODO: Add protocol to communicate with PhotoMapViewController
 protocol LocationsViewControllerDelegate: class {
@@ -31,12 +31,25 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
 
     var results: NSArray = []
     
+    var locationManager = CLLocationManager()
+    var currentLoc: CLLocation!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.dataSource = self
         tableView.delegate = self
         searchBar.delegate = self
+        getCurrentLocation()
+        fetchLocations(query: "temp")
+    }
+    
+    func getCurrentLocation(){
+        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
+            CLLocationManager.authorizationStatus() == .authorizedAlways {
+            currentLoc = locationManager.location
+            print("lat: \(currentLoc.coordinate.latitude)  lng: \(currentLoc.coordinate.longitude)")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -85,18 +98,18 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         let newText = NSString(string: searchBar.text!).replacingCharacters(in: range, with: text)
-        fetchLocations(newText)
+        fetchLocations(query: newText)
         
         return true
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        fetchLocations(searchBar.text!)
+        fetchLocations(query: searchBar.text!)
     }
     
-    func fetchLocations(_ query: String, near: String = "Irvine") {
+    func fetchLocations(query: String = "") {
         let baseUrlString = "https://api.foursquare.com/v2/venues/search?"
-        let queryString = "client_id=\(CLIENT_ID)&client_secret=\(CLIENT_SECRET)&v=20141020&near=\(near),CA&query=\(query)"
+        let queryString = "client_id=\(CLIENT_ID)&client_secret=\(CLIENT_SECRET)&v=20141020&ll=\(currentLoc.coordinate.latitude),\(currentLoc.coordinate.longitude)&query=\(query)"
 
         let url = URL(string: baseUrlString + queryString.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!)!
         let request = URLRequest(url: url)

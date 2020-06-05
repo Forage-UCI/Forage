@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import CoreLocation
 // ----- TODO: Add protocol to communicate with PhotoMapViewController
 protocol ListLocationsViewControllerDelegate: class {
     func locationsPickedLocation(controller: LocationsViewController, latitude: NSNumber, longitude: NSNumber, title: String)
@@ -28,13 +28,16 @@ class ListLocationsViewController: UIViewController, UITableViewDelegate, UITabl
     
     var results: NSArray = []
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         tableView.dataSource = self
         tableView.delegate = self
         searchBar.delegate = self
+        
     }
+    
+
     
    override func didReceiveMemoryWarning() {
             super.didReceiveMemoryWarning()

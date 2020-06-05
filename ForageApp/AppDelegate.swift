@@ -10,7 +10,7 @@
 import UIKit
 import Parse
 import UserNotifications
-import GooglePlaces
+import CoreLocation
 import Moya
 
 
@@ -46,8 +46,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         locationManager = CLLocationManager()
         locationManager?.delegate = self
         locationManager?.requestWhenInUseAuthorization()
-        //Google Place APIkey setup
-        GMSPlacesClient.provideAPIKey("AIzaSyAmLjLohCAeN9f7PSE8VImPqn-hxzVAAVk")
         
         //Notification setup
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
