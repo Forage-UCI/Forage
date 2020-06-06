@@ -34,7 +34,7 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
         callView.layer.borderWidth = 1
         callView.layer.borderColor = UIColor.orange.cgColor
         
-        tableView.separatorStyle = .none
+//        tableView.separatorStyle = .none
     }
     
     @IBAction func onEditProfileButton(_ sender: Any) {
