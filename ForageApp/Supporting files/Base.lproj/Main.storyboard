@@ -647,7 +647,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1Lc-hL-ipm">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <rect key="frame" x="0.0" y="-55" width="414" height="897"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PrivacyCell" rowHeight="59" id="6Qi-ba-1YO" customClass="PrivacyCell" customModule="Forage" customModuleProvider="target">
@@ -849,7 +849,7 @@
                         <viewLayoutGuide key="safeArea" id="3aq-ha-NaA"/>
                     </view>
                     <navigationItem key="navigationItem" title="Feed" id="74b-GH-qYc">
-                        <barButtonItem key="rightBarButtonItem" title="Check-In" id="SzN-a0-69C">
+                        <barButtonItem key="rightBarButtonItem" title="New Check-In" id="SzN-a0-69C">
                             <color key="tintColor" red="0.82879263160000005" green="0.4527602792" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="onTapCheckIn:" destination="yF4-oJ-09T" id="a6D-55-bR2"/>
@@ -1534,6 +1534,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.82879263160000005" green="0.4527602792" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" red="0.82879263160000005" green="0.4527602792" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </textAttributes>
                     </navigationBar>
