@@ -8,6 +8,7 @@
 //
 
 import UIKit
+import Parse
 
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -18,6 +19,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     var venue: NSDictionary = [:]
     let CLIENT_ID = "QA1L0Z0ZNA2QVEEDHFPQWK0I5F1DE3GPLSNW4BZEBGJXUCFL"
     let CLIENT_SECRET = "W2AOE1TYC4MHK5SZYOUGX0J3LVRALMPB4CXT3ZH21ZCPUMCU"
+    
+    //var favorite_rest = [PFObject()]
     
     
     var viewModels = [RestaurantListViewModel]() {
@@ -43,6 +46,28 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         print(viewModels)
         
 
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+//        let query = PFQuery(className: "Fav_Restaurands")
+//        query.includeKey("author")
+//        query.limit = 20
+//
+//        query.findObjectsInBackground { (favorites, error) in
+//            if favorites != nil {
+//                self.favorite_rest = favorites!
+//                //var count = 0
+////                for fav in self.favorite_rest{
+////                    let user = fav["author"] as! PFUser
+////                }
+////                self.postNumberLabel.text = String(count)
+//                print(self.favorite_rest)
+//            } else{
+//                print("error!")
+//            }
+//        }
     }
     
     func loadData(){
@@ -71,6 +96,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         // TODO: Setup FeedCell
         cell.restaurantNameLabel.text = favorites[indexPath.row]
         cell.distanceLabel.text = distances[indexPath.row]
+        cell.addressLabel.text = addresses[indexPath.row]
         cell.restaurantImageView.af_setImage(withURL: URL(string: images[indexPath.row])!)
 //        let url = self.getPhotosFromVenue()
 //        cell.restaurantImageView.af.setImage(withURL: url)

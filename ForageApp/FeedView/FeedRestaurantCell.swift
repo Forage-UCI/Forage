@@ -13,6 +13,7 @@ class FeedRestaurantCell: UITableViewCell {
     @IBOutlet weak var restaurantImageView: UIImageView!
     @IBOutlet weak var restaurantNameLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
     
     
     override func awakeFromNib() {

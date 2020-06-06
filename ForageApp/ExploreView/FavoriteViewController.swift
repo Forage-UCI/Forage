@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class FavoriteViewController: UIViewController {
 
@@ -39,6 +40,7 @@ class FavoriteViewController: UIViewController {
         favBtn.setTitle("Favorited!", for: .normal)
         
         //TODO: add to favorite of posts
+        
     }
     
     func UIColorFromRGB(rgbValue: UInt) -> UIColor {
