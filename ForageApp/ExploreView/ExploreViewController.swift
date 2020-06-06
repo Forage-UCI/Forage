@@ -13,6 +13,8 @@ class ExploreViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     
+    let locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +23,9 @@ class ExploreViewController: UIViewController, MKMapViewDelegate {
             self.setInitialLocation()
         }
         mapView.delegate = self
+        
     }
+    
     
 //    @IBAction func didTapListButton(_ sender: Any) {
 //        guard let listResturantViewController = storyboard?.instantiateViewController(withIdentifier: "listRestaurantVC") as? ListRestaurantViewController else {return}
@@ -65,3 +69,4 @@ class ExploreViewController: UIViewController, MKMapViewDelegate {
     */
 
 }
+
