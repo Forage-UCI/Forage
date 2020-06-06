@@ -1,51 +1,48 @@
 //
-//  LocationsViewController.swift
+//  NewLocationsViewController.swift
 //  Forage
 //
-//  Created by Maha Malik on 6/1/20.
-//  Modified by Yanjie Xu on 6/5/20.
+//  Created by Maha Malik on 6/5/20.
 //  Copyright © 2020 Forage-UCI. All rights reserved.
 //
 
 import UIKit
 import CoreLocation
 
-// ----- TODO: Add protocol to communicate with PhotoMapViewController
-protocol LocationsViewControllerDelegate: class {
-    func locationsPickedLocation(controller: LocationsViewController, latitude: NSNumber, longitude: NSNumber, title: String)
+protocol NewLocationsViewControllerDelegate: class {
+    func locationsPickedLocation(controller: NewLocationsViewController, latitude: NSNumber, longitude: NSNumber, title: String)
 }
 
-
-
-class LocationsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
-
+class NewLocationsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
-    // ––––– TODO: Add delegate
     weak var delegate: LocationsViewControllerDelegate!
+       
+       // ––––– TODO: Fill in actual CLIENT_ID and CLIENT_SECRET
+       let CLIENT_ID = "QA1L0Z0ZNA2QVEEDHFPQWK0I5F1DE3GPLSNW4BZEBGJXUCFL"
+       let CLIENT_SECRET = "W2AOE1TYC4MHK5SZYOUGX0J3LVRALMPB4CXT3ZH21ZCPUMCU"
     
-    // ––––– TODO: Fill in actual CLIENT_ID and CLIENT_SECRET
-    let CLIENT_ID = "QA1L0Z0ZNA2QVEEDHFPQWK0I5F1DE3GPLSNW4BZEBGJXUCFL"
-    let CLIENT_SECRET = "W2AOE1TYC4MHK5SZYOUGX0J3LVRALMPB4CXT3ZH21ZCPUMCU"
-
     @IBOutlet weak var tableView: UITableView!
+    //tableView
     @IBOutlet weak var searchBar: UISearchBar!
-
+    //searchBar
+    
     var results: NSArray = []
     
     var locationManager = CLLocationManager()
     var currentLoc: CLLocation!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableView.dataSource = self
         tableView.delegate = self
         searchBar.delegate = self
         getCurrentLocation()
         fetchLocations(query: "temp")
+
+        // Do any additional setup after loading the view.
     }
     
-    //Get Current Locations
     func getCurrentLocation(){
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
             CLLocationManager.authorizationStatus() == .authorizedAlways {
@@ -59,13 +56,13 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
         // Dispose of any resources that can be recreated.
     }
 
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return results.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "LocationCell") as! LocationCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NewLocationCell") as! NewLocationCell
         
         cell.location = results[(indexPath as NSIndexPath).row] as? NSDictionary
         
@@ -83,21 +80,21 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
         
         // Return to the PhotoMapViewController with the lat and lng of venue
         
-        self.performSegue(withIdentifier: "CheckinSegue", sender: tableView.cellForRow(at: indexPath))
+        self.performSegue(withIdentifier: "NewFavSegue", sender: tableView.cellForRow(at: indexPath))
         
     }
-    
+
     func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         let newText = NSString(string: searchBar.text!).replacingCharacters(in: range, with: text)
         fetchLocations(query: newText)
         
         return true
     }
-    
+
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         fetchLocations(query: searchBar.text!)
     }
-    
+
     func fetchLocations(query: String = "", near: String = "Irvine") {
         let baseUrlString = "https://api.foursquare.com/v2/venues/search?"
         
@@ -135,8 +132,8 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
         //Do data processing
         let venue = results[(indexPath as NSIndexPath).row] as! NSDictionary
         
-        if segue.identifier == "CheckinSegue"{
-            let checkInViewController = segue.destination as! CheckInViewController
+        if segue.identifier == "NewFavSegue"{
+            let checkInViewController = segue.destination as! NewFavoritesViewController
             //print(venue)
             let name = venue.value(forKeyPath: "name") as! String
             let formattedAdress = venue.value(forKeyPath: "location.formattedAddress") as! [String]?
@@ -146,7 +143,7 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
             checkInViewController.placeID = id
         }
         tableView.deselectRow(at: indexPath, animated: true)
-//        self.dismiss(animated: true, completion: nil)
+    //        self.dismiss(animated: true, completion: nil)
     }
-}
 
+}

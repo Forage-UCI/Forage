@@ -29,6 +29,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+    
     var restName: String!
     var formattedAddress: [String]!
     var placeID: String!
@@ -77,7 +78,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 //            address = address + str + " "
 //        }
 //        AddressLabel.text = address
-        requestPlaceDetails()
+        //requestPlaceDetails()
         
     }
     
@@ -105,56 +106,49 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(identifier: "CheckInFeedViewController") as? CheckInFeedViewController
+        vc?.address = addresses[indexPath.row]
+        vc?.restName = favorites[indexPath.row]
+        vc?.imageURL = images[indexPath.row]
+        self.navigationController?.pushViewController(vc!, animated: true)
+        
+        
+        
+        /*-------TODO--------*/
+        //Set the latitude and longitude of the venue and send it to the protocol
+        //delegate.locationsPickedLocation(controller: self, latitude: lat, longitude: lng, title: name)
+        
+        // Return to the PhotoMapViewController with the lat and lng of venue
+        
+//        self.performSegue(withIdentifier: "FeedCheckInSegue", sender: tableView.cellForRow(at: indexPath))
+    }
 
     @IBAction func onTapCheckIn(_ sender: Any) {
         self.performSegue(withIdentifier: "LocationsViewController", sender: nil)
     }
     
-    func requestPlaceDetails() {
-        let baseUrlString = "https://api.foursquare.com/v2/venues/"
-        let queryString = "\(placeID!)?&client_id=\(CLIENT_ID)&client_secret=\(CLIENT_SECRET)&v=20141020"
-        let url = URL(string: baseUrlString + queryString)!
-        let request = URLRequest(url: url)
-
-        let session = URLSession(
-            configuration: URLSessionConfiguration.default,
-            delegate:nil,
-            delegateQueue:OperationQueue.main
-        )
-        
-        let task : URLSessionDataTask = session.dataTask(with: request,
-            completionHandler: { (dataOrNil, response, error) in
-                if let data = dataOrNil {
-                    if let responseDictionary = try! JSONSerialization.jsonObject(
-                        with: data, options:[]) as? NSDictionary {
-                            //NSLog("response: \(responseDictionary)")
-                        self.venue = responseDictionary.value(forKeyPath: "response.venue") as! NSDictionary
-                        print(self.venue)
-                        //You can add other function like getPhotos to get more detail place infos
-                        self.getPhotosFromVenue()
-                    }
-                }
-        });
-        task.resume()
-    }
     
-    func getPhotosFromVenue() -> URL{
-        let photos_count = venue.value(forKeyPath: "photos.count") as! Int
-        if photos_count > 0{
-            let photos_groups = venue.value(forKeyPath: "photos.groups") as! NSArray
-            let photos = (photos_groups[0] as AnyObject).value(forKey: "items") as! NSArray
-            let photo = photos[0] as! NSDictionary
-            let prefix = photo.value(forKey: "prefix") as! String
-            let suffix = photo.value(forKey: "suffix") as! String
-            print(prefix)
-            print(suffix)
-            let url = URL(string: prefix+"500x300"+suffix)!
-            return url
-//            .af.setImage(withURL: url)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //let cell = sender as! UITableViewCell
+//        let indexPath = tableView.indexPath(for: cell)!
+//        //Do data processing
+//        let venue = results[(indexPath as NSIndexPath).row] as! NSDictionary
+        
+        if segue.identifier == "FeedCheckInSegue"{
+            let checkInViewController = segue.destination as! CheckInFeedViewController
+//            print("IN FEED VIEW")
+//            print(venue)
+//            let name = venue.value(forKeyPath: "name") as! String
+//            let formattedAdress = venue.value(forKeyPath: "location.formattedAddress") as! [String]?
+//            let id = venue.value(forKey: "id") as! String
+//            checkInViewController.restName =
+//            checkInViewController.formattedAddress = formattedAdress
+//            checkInViewController.placeID = id
         }
-        
-        return URL(string: "")!
-        
+//        tableView.deselectRow(at: indexPath, animated: true)
+//        self.dismiss(animated: true, completion: nil)
     }
     
     

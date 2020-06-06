@@ -1,16 +1,17 @@
 //
-//  FavoriteViewController.swift
+//  NewFavoritesViewController.swift
 //  Forage
 //
-//  Created by Maha Malik on 6/4/20.
+//  Created by Maha Malik on 6/5/20.
 //  Copyright © 2020 Forage-UCI. All rights reserved.
 //
 
 import UIKit
 import Parse
+import AlamofireImage
 
-class FavoriteViewController: UIViewController {
-
+class NewFavoritesViewController: UIViewController {
+    
     @IBOutlet weak var favBtn: UIButton!
     @IBOutlet weak var reviewTextField: UITextView!
     @IBOutlet weak var restaurantImageView: UIImageView!
@@ -24,26 +25,20 @@ class FavoriteViewController: UIViewController {
     var restName: String!
     var formattedAddress: [String]!
     var placeID: String!
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData()
-        
-        restaurantImageView.layer.cornerRadius = 5;
-        restaurantImageView.layer.masksToBounds = true;
-        // Do any additional setup after loading the view.
-    }
-    
-    func loadData(){
+
         var address: String = ""
+        
         restaurantName.text = restName
         for str in formattedAddress{
             address = address + str + " "
         }
+        
         addressLabel.text = address
         requestPlaceDetails()
-        
+        // Do any additional setup after loading the view.
     }
     
     func requestPlaceDetails(){

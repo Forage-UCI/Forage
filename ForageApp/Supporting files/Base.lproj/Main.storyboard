@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uWk-iv-scg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -101,7 +101,7 @@
                         <viewLayoutGuide key="safeArea" id="umb-MC-WTb"/>
                     </view>
                     <navigationItem key="navigationItem" title="Explore Restuarants" id="08C-1Y-LQ2">
-                        <barButtonItem key="leftBarButtonItem" title="List" id="CdK-Lp-sld">
+                        <barButtonItem key="leftBarButtonItem" title="Friend's List" id="CdK-Lp-sld">
                             <color key="tintColor" red="0.92268538479999995" green="0.61384171249999997" blue="0.12126500160000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <segue destination="Igo-1h-rIt" kind="presentation" id="5rM-4w-Bmt"/>
@@ -110,7 +110,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" image="magnifyingglass" catalog="system" id="7WT-Wu-wj6">
                             <color key="tintColor" red="0.88016110749999998" green="0.62424255240000004" blue="0.24942295789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
-                                <segue destination="5Sq-hk-Ygw" kind="presentation" identifier="locationSegue" id="6m6-k2-mxa"/>
+                                <segue destination="tfg-Tx-1NL" kind="presentation" id="CbI-DY-2Pe"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -177,7 +177,7 @@
                                 <color key="backgroundColor" red="1" green="0.70923669199999995" blue="0.28338329849999999" alpha="0.55311949819999995" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="test" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NIB-VF-b2W">
-                                <rect key="frame" x="187" y="276.5" width="42" height="30"/>
+                                <rect key="frame" x="20" y="277" width="374" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="22"/>
                                 <color key="textColor" red="0.88016110749999998" green="0.62424255240000004" blue="0.24942295789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -316,7 +316,7 @@
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="test" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxm-Z1-JLV">
-                                <rect key="frame" x="179" y="220" width="58" height="18"/>
+                                <rect key="frame" x="31" y="220" width="346" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="22"/>
                                 <color key="textColor" red="0.88016110749999998" green="0.62424255240000004" blue="0.24942295789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -568,7 +568,6 @@
                                             <outlet property="distanceLabel" destination="dkS-2M-Blf" id="hXs-WB-xG1"/>
                                             <outlet property="restaurantImageView" destination="h5m-dE-HuW" id="XxC-kv-aor"/>
                                             <outlet property="restaurantNameLabel" destination="SI1-Ub-t7o" id="elX-aA-mHR"/>
-                                            <segue destination="gHa-as-0ax" kind="show" id="Ior-E1-Zie"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -595,18 +594,18 @@
             </objects>
             <point key="canvasLocation" x="2921.739130434783" y="-133.25892857142856"/>
         </scene>
-        <!--Chick-Fil-A-->
+        <!--CheckInFeedViewController-->
         <scene sceneID="Mfk-Bi-uP6">
             <objects>
-                <viewController id="gHa-as-0ax" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CheckInFeedViewController" title="CheckInFeedViewController" id="gHa-as-0ax" customClass="CheckInFeedViewController" customModule="Forage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vZH-am-F1D">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo Name" translatesAutoresizingMaskIntoConstraints="NO" id="EPP-WS-u9W">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="EPP-WS-u9W">
                                 <rect key="frame" x="20" y="222" width="374" height="264"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.70943138780000004" blue="0.28997674280000002" alpha="0.73558011170000004" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.86209815860000005" green="0.86209815860000005" blue="0.86209815860000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chick-Fil-A" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nk6-cT-0LO">
                                 <rect key="frame" x="20" y="118" width="374" height="48"/>
@@ -625,6 +624,7 @@
                                 </state>
                                 <connections>
                                     <action selector="onCheckInBtn:" destination="XHX-ce-t8I" eventType="touchUpInside" id="6Oe-1y-RZG"/>
+                                    <action selector="onCheckInBtn:" destination="gHa-as-0ax" eventType="touchUpInside" id="srN-c9-xlJ"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4115 Campus Dr, Irvine, CA 92612" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bf-xK-cZ1">
@@ -639,10 +639,16 @@
                         <viewLayoutGuide key="safeArea" id="aja-51-qfA"/>
                     </view>
                     <navigationItem key="navigationItem" title="Chick-Fil-A" largeTitleDisplayMode="never" id="YLS-IC-SHg"/>
+                    <connections>
+                        <outlet property="addressLabel" destination="6bf-xK-cZ1" id="SmM-pT-Fhh"/>
+                        <outlet property="checkInBtn" destination="qTu-bh-5ac" id="yZG-A9-vpz"/>
+                        <outlet property="restaurantImageView" destination="EPP-WS-u9W" id="tW5-Mm-0xy"/>
+                        <outlet property="restaurantName" destination="nk6-cT-0LO" id="Rvq-uk-9tZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CQf-dJ-Ar3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4024.6376811594205" y="-593.30357142857144"/>
+            <point key="canvasLocation" x="3723" y="-133"/>
         </scene>
         <!--Check In View Controller-->
         <scene sceneID="yPo-jE-MIA">
@@ -652,10 +658,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo Name" translatesAutoresizingMaskIntoConstraints="NO" id="tvl-DU-L3Z">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="tvl-DU-L3Z">
                                 <rect key="frame" x="20" y="137" width="374" height="264"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.70943138780000004" blue="0.28997674280000002" alpha="0.73558011170000004" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.86209815860000005" green="0.86209815860000005" blue="0.86209815860000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AZU-g2-ONp">
                                 <rect key="frame" x="20" y="444" width="374" height="94"/>
@@ -1069,7 +1075,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wgw-4h-2v0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4024.6376811594205" y="585.9375"/>
+            <point key="canvasLocation" x="3812" y="582"/>
         </scene>
         <!--FavoriteViewController-->
         <scene sceneID="GOE-GR-xpV">
@@ -1079,16 +1085,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Honda-Ya" translatesAutoresizingMaskIntoConstraints="NO" id="zN2-S3-VQJ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="zN2-S3-VQJ">
                                 <rect key="frame" x="20" y="152" width="374" height="264"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.70943138780000004" blue="0.28997674280000002" alpha="0.73558011170000004" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.86209815860000005" green="0.86209815860000005" blue="0.86209815860000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vdc-Ca-QdO">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="This restaurant is phenomenal and amazing! I really enjoyed with friends and great food!" translatesAutoresizingMaskIntoConstraints="NO" id="Vdc-Ca-QdO">
                                 <rect key="frame" x="20" y="459" width="374" height="94"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.70943138780000004" blue="0.28997674280000002" alpha="0.50650262879999997" colorSpace="custom" customColorSpace="displayP3"/>
-                                <string key="text">5 Stars! Such a clean and delicious place! The customer service was phenomenal and they came out with our food so quickly! Would definitely recommend to a friend and visit again soon!</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1141,14 +1146,161 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D03-bj-R5o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5088" y="582"/>
+            <point key="canvasLocation" x="4633" y="582"/>
+        </scene>
+        <!--New Locations View Controller-->
+        <scene sceneID="0o1-87-hw3">
+            <objects>
+                <viewController id="tfg-Tx-1NL" customClass="NewLocationsViewController" customModule="Forage" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="t3r-yc-Irk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="61" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="T4v-Ja-pDM">
+                                <rect key="frame" x="10" y="20" width="404" height="822"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="Ngw-ff-E8A">
+                                    <rect key="frame" x="0.0" y="0.0" width="404" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="NewLocationCell" rowHeight="61" id="q1z-A4-vsB" customClass="NewLocationCell" customModule="Forage" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="404" height="61"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q1z-A4-vsB" id="gXm-Yy-KeJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="373" height="61"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zEi-5m-SjG">
+                                                    <rect key="frame" x="8" y="15" width="32" height="32"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="32" id="I7p-r0-40P"/>
+                                                        <constraint firstAttribute="height" constant="32" id="mf2-xb-GLw"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thai Basil" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BA4-lP-SjI">
+                                                    <rect key="frame" x="48" y="18" width="309" height="17"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="101 S Murphy Ave" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1gt-vQ-jJG">
+                                                    <rect key="frame" x="48" y="37" width="317" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.43902853260000002" green="0.43902853260000002" blue="0.43902853260000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="BA4-lP-SjI" firstAttribute="leading" secondItem="1gt-vQ-jJG" secondAttribute="leading" id="1pA-LP-GOp"/>
+                                                <constraint firstItem="1gt-vQ-jJG" firstAttribute="leading" secondItem="zEi-5m-SjG" secondAttribute="trailing" constant="8" id="3h3-Ta-WbB"/>
+                                                <constraint firstItem="BA4-lP-SjI" firstAttribute="top" secondItem="gXm-Yy-KeJ" secondAttribute="topMargin" constant="7" id="5d1-mJ-eJa"/>
+                                                <constraint firstItem="BA4-lP-SjI" firstAttribute="leading" secondItem="zEi-5m-SjG" secondAttribute="trailing" constant="8" id="MXh-Q5-NvZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="1gt-vQ-jJG" secondAttribute="trailing" constant="8" id="U2R-XA-mty"/>
+                                                <constraint firstItem="zEi-5m-SjG" firstAttribute="top" secondItem="gXm-Yy-KeJ" secondAttribute="top" constant="15" id="You-7p-ydq"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="BA4-lP-SjI" secondAttribute="trailing" constant="8" id="eVM-jW-pUn"/>
+                                                <constraint firstItem="zEi-5m-SjG" firstAttribute="leading" secondItem="gXm-Yy-KeJ" secondAttribute="leading" constant="8" id="nEZ-Mc-kV0"/>
+                                                <constraint firstItem="1gt-vQ-jJG" firstAttribute="top" secondItem="BA4-lP-SjI" secondAttribute="bottom" constant="2" id="yur-zR-X9w"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="addressLabel" destination="1gt-vQ-jJG" id="Ngh-Vd-6L4"/>
+                                            <outlet property="categoryImageView" destination="zEi-5m-SjG" id="lpP-5d-EsT"/>
+                                            <outlet property="nameLabel" destination="BA4-lP-SjI" id="KgV-K6-Vy8"/>
+                                            <segue destination="VF2-WI-N0q" kind="presentation" identifier="NewFavSegue" id="4hf-zA-cc3"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="ObR-eQ-Mq9"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="Ngw-ff-E8A" id="4Ma-rd-pn2"/>
+                        <outlet property="tableView" destination="T4v-Ja-pDM" id="DJp-47-E8I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mEx-hO-CyV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5476" y="583"/>
+        </scene>
+        <!--New Favorites View Controller-->
+        <scene sceneID="BXh-4K-zS3">
+            <objects>
+                <viewController id="VF2-WI-N0q" customClass="NewFavoritesViewController" customModule="Forage" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="j2x-1F-Uzg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="1Qq-Bu-pGd">
+                                <rect key="frame" x="20" y="144" width="374" height="264"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.86209815860000005" green="0.86209815860000005" blue="0.86209815860000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Such a delicious place to visit! Will come here again with friends! 5 STARS!" translatesAutoresizingMaskIntoConstraints="NO" id="EF2-YD-mS1">
+                                <rect key="frame" x="20" y="451" width="374" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.70943138780000004" blue="0.28997674280000002" alpha="0.50650262879999997" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Customer Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c15-Yx-O8q">
+                                <rect key="frame" x="20" y="416" width="160" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="556 El Camino Real, Tustin, CA 92780" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jwg-Zy-wr1">
+                                <rect key="frame" x="20" y="96" width="374" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Honda-Ya" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="isE-VZ-sek">
+                                <rect key="frame" x="20" y="40" width="374" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
+                                <color key="textColor" red="0.82879263160000005" green="0.4527602792" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3FK-jL-V9k">
+                                <rect key="frame" x="20" y="581" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.92268538479999995" green="0.61384171249999997" blue="0.12126500160000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="Favorite">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onCheckInBtn:" destination="XHX-ce-t8I" eventType="touchUpInside" id="I6e-ne-vS6"/>
+                                    <action selector="onFavBtn:" destination="VF2-WI-N0q" eventType="touchUpInside" id="45j-Gi-x06"/>
+                                    <action selector="onFavBtn:" destination="vKe-zt-dg1" eventType="touchUpInside" id="rbR-d2-jwV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="kzD-jU-fxV"/>
+                    </view>
+                    <connections>
+                        <outlet property="addressLabel" destination="Jwg-Zy-wr1" id="T16-Bv-STL"/>
+                        <outlet property="favBtn" destination="3FK-jL-V9k" id="SxH-6o-SEx"/>
+                        <outlet property="restaurantImageView" destination="1Qq-Bu-pGd" id="GR1-RW-dhq"/>
+                        <outlet property="restaurantName" destination="isE-VZ-sek" id="B10-59-9hH"/>
+                        <outlet property="reviewTextField" destination="EF2-YD-mS1" id="14M-cM-PWu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S2S-xl-Ux2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6334" y="581"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="6m6-k2-mxa"/>
-    </inferredMetricsTieBreakers>
     <resources>
-        <image name="Honda-Ya" width="748" height="420"/>
         <image name="Logo" width="750" height="420"/>
         <image name="Logo Image" width="180" height="172"/>
         <image name="Logo Name" width="750" height="102"/>

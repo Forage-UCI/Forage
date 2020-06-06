@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		2020BADC24878371001525EE /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2020BADB24878371001525EE /* CheckInViewController.swift */; };
 		2EDA3DF4658DCA519AF3A4E4 /* Pods_ForageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2670A827E4D07D624D9A4A0A /* Pods_ForageTests.framework */; };
+		581AE76F248B480100A85AD3 /* CheckInFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581AE76E248B480100A85AD3 /* CheckInFeedViewController.swift */; };
+		581AE771248B587D00A85AD3 /* NewLocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581AE770248B587D00A85AD3 /* NewLocationsViewController.swift */; };
+		581AE773248B588F00A85AD3 /* NewLocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581AE772248B588F00A85AD3 /* NewLocationCell.swift */; };
+		581AE775248B58A000A85AD3 /* NewFavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581AE774248B58A000A85AD3 /* NewFavoritesViewController.swift */; };
 		582DD2EC248A039100CDA639 /* ListLocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582DD2EB248A039100CDA639 /* ListLocationsViewController.swift */; };
 		582DD2EE248A0A9100CDA639 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582DD2ED248A0A9100CDA639 /* FavoriteViewController.swift */; };
 		582DD2F0248A1E0100CDA639 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582DD2EF248A1E0100CDA639 /* NetworkService.swift */; };
@@ -60,6 +64,10 @@
 		4C0538653353291D2A0A958A /* Pods-Forage-ForageUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forage-ForageUITests.debug.xcconfig"; path = "Target Support Files/Pods-Forage-ForageUITests/Pods-Forage-ForageUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4C9A72110DFBEFC8D9182776 /* Pods-ForageTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForageTests.release.xcconfig"; path = "Target Support Files/Pods-ForageTests/Pods-ForageTests.release.xcconfig"; sourceTree = "<group>"; };
 		4F9483C98F9A6101D4D0980C /* Pods-ForageTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForageTests.debug.xcconfig"; path = "Target Support Files/Pods-ForageTests/Pods-ForageTests.debug.xcconfig"; sourceTree = "<group>"; };
+		581AE76E248B480100A85AD3 /* CheckInFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInFeedViewController.swift; sourceTree = "<group>"; };
+		581AE770248B587D00A85AD3 /* NewLocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLocationsViewController.swift; sourceTree = "<group>"; };
+		581AE772248B588F00A85AD3 /* NewLocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLocationCell.swift; sourceTree = "<group>"; };
+		581AE774248B58A000A85AD3 /* NewFavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFavoritesViewController.swift; sourceTree = "<group>"; };
 		582DD2EB248A039100CDA639 /* ListLocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLocationsViewController.swift; sourceTree = "<group>"; };
 		582DD2ED248A0A9100CDA639 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		582DD2EF248A1E0100CDA639 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -158,6 +166,7 @@
 			children = (
 				58394CA7247E2C2600BC3053 /* FeedViewController.swift */,
 				58D160BB248614A6003FC1C1 /* FeedRestaurantCell.swift */,
+				581AE76E248B480100A85AD3 /* CheckInFeedViewController.swift */,
 			);
 			path = FeedView;
 			sourceTree = "<group>";
@@ -229,6 +238,9 @@
 				2020BAE224878517001525EE /* Supporting files */,
 				582DD2EF248A1E0100CDA639 /* NetworkService.swift */,
 				5849A7AE248A247A00789F42 /* Models.swift */,
+				581AE770248B587D00A85AD3 /* NewLocationsViewController.swift */,
+				581AE772248B588F00A85AD3 /* NewLocationCell.swift */,
+				581AE774248B58A000A85AD3 /* NewFavoritesViewController.swift */,
 			);
 			path = ForageApp;
 			sourceTree = "<group>";
@@ -554,16 +566,20 @@
 				58394CA8247E2C2600BC3053 /* FeedViewController.swift in Sources */,
 				582DD2F0248A1E0100CDA639 /* NetworkService.swift in Sources */,
 				5852D4DD247CF81300D09889 /* AppDelegate.swift in Sources */,
+				581AE773248B588F00A85AD3 /* NewLocationCell.swift in Sources */,
 				2020BADC24878371001525EE /* CheckInViewController.swift in Sources */,
 				58D160BA2486144A003FC1C1 /* LocationCell.swift in Sources */,
 				58BF80C6247E2FA00055F44F /* ExploreViewController.swift in Sources */,
 				58D160B624861412003FC1C1 /* PrivacyViewController.swift in Sources */,
 				58D160B82486142C003FC1C1 /* NotificationsViewController.swift in Sources */,
+				581AE771248B587D00A85AD3 /* NewLocationsViewController.swift in Sources */,
 				582DD2EE248A0A9100CDA639 /* FavoriteViewController.swift in Sources */,
 				5852D4DF247CF81300D09889 /* SceneDelegate.swift in Sources */,
+				581AE76F248B480100A85AD3 /* CheckInFeedViewController.swift in Sources */,
 				5849A7B1248AC1B700789F42 /* PrivacyCell.swift in Sources */,
 				58D160BC248614A6003FC1C1 /* FeedRestaurantCell.swift in Sources */,
 				5849A7AF248A247A00789F42 /* Models.swift in Sources */,
+				581AE775248B58A000A85AD3 /* NewFavoritesViewController.swift in Sources */,
 				58D160B2248611A4003FC1C1 /* SettingsViewController.swift in Sources */,
 				58FEF60E24898C82005F929E /* ExploreRestaurantCell.swift in Sources */,
 			);

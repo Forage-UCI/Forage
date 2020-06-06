@@ -59,23 +59,23 @@ class ListLocationsViewController: UIViewController, UITableViewDelegate, UITabl
         // This is the selected venue
         let venue = results[(indexPath as NSIndexPath).row] as! NSDictionary
         
-        print(venue)
-        
-        // Lat and lng of venue selected
-        let lat = venue.value(forKeyPath: "location.lat") as! NSNumber
-        let lng = venue.value(forKeyPath: "location.lng") as! NSNumber
-        let name = venue.value(forKeyPath: "name") as! String
-        
-        /*-------TODO--------*/
-        //Set the latitude and longitude of the venue and send it to the protocol
-        //delegate.locationsPickedLocation(controller: self, latitude: lat, longitude: lng, title: name)
-        
-        // Return to the PhotoMapViewController with the lat and lng of venue
-        
-        let latString = "\(lat)"
-        let lngString = "\(lng)"
-        
-        print(latString + " " + lngString)
+//        print(venue)
+//
+//        // Lat and lng of venue selected
+//        let lat = venue.value(forKeyPath: "location.lat") as! NSNumber
+//        let lng = venue.value(forKeyPath: "location.lng") as! NSNumber
+//        let name = venue.value(forKeyPath: "name") as! String
+//
+//        /*-------TODO--------*/
+//        //Set the latitude and longitude of the venue and send it to the protocol
+//        //delegate.locationsPickedLocation(controller: self, latitude: lat, longitude: lng, title: name)
+//
+//        // Return to the PhotoMapViewController with the lat and lng of venue
+//
+//        let latString = "\(lat)"
+//        let lngString = "\(lng)"
+//
+//        print(latString + " " + lngString)
         self.performSegue(withIdentifier: "FavoriteSegue", sender: tableView.cellForRow(at: indexPath))
         
     }
@@ -130,8 +130,10 @@ class ListLocationsViewController: UIViewController, UITableViewDelegate, UITabl
             
             let name = venue.value(forKeyPath: "name") as! String
             let formattedAdress = venue.value(forKeyPath: "location.formattedAddress") as! [String]?
+            let id = venue.value(forKey: "id") as! String
             favViewController.restName = name
             favViewController.formattedAddress = formattedAdress
+            favViewController.placeID = id
         }
         tableView.deselectRow(at: indexPath, animated: true)
     //        self.dismiss(animated: true, completion: nil)
