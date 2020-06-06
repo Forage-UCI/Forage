@@ -14,12 +14,22 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
 
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var callView: UIView!
+    @IBOutlet weak var cancelButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        profileImageView.layer.masksToBounds = true
+        profileImageView.layer.cornerRadius = profileImageView.bounds.width / 2
 
         // Do any additional setup after loading the view.
         usernameLabel.text = PFUser.current()?.username
+        callView.isHidden = true
+        callView.layer.cornerRadius = 10;
+        callView.layer.masksToBounds = true;
+        callView.layer.borderWidth = 1
+        callView.layer.borderColor = UIColor.orange.cgColor
     }
     
     @IBAction func onEditProfileButton(_ sender: Any) {
@@ -49,7 +59,13 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
                
     }
     
-
+    @IBAction func onContactBtn(_ sender: Any) {
+        callView.isHidden = false
+    }
+    
+    @IBAction func onCancelBtn(_ sender: Any) {
+        callView.isHidden = true
+    }
     /*
     // MARK: - Navigation
 

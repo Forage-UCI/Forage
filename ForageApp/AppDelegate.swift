@@ -10,15 +10,21 @@
 import UIKit
 import Parse
 import UserNotifications
-import GooglePlaces
+import CoreLocation
+import Moya
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
     var locationManager: CLLocationManager?
+//    let service = MoyaProvider<YelpService.BusinessesProvider>()
+//    let jsonDecoder = JSONDecoder()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        
         Parse.initialize(
             with: ParseClientConfiguration(block: { (configuration: ParseMutableClientConfiguration) -> Void in
                 configuration.applicationId = "forage-uci"
@@ -29,8 +35,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         locationManager = CLLocationManager()
         locationManager?.delegate = self
         locationManager?.requestWhenInUseAuthorization()
-        //Google Place APIkey setup
-        GMSPlacesClient.provideAPIKey("AIzaSyAmLjLohCAeN9f7PSE8VImPqn-hxzVAAVk")
         
         //Notification setup
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in

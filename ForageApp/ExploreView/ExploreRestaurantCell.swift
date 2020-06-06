@@ -10,10 +10,28 @@ import UIKit
 
 class ExploreRestaurantCell: UITableViewCell {
     
-    @IBOutlet weak var restaurantImage: UIImageView!
+    @IBOutlet weak var categoryImageView: UIImageView!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var numFavFriendsLabel: UILabel!
-    @IBOutlet weak var restaurantType: UILabel!
-    @IBOutlet weak var restaurantName: UILabel!
+    
+    var location: NSDictionary! {
+        didSet {
+            nameLabel.text = location["name"] as? String
+            numFavFriendsLabel.text = String(Int.random(in: 1...45))
+            addressLabel.text = location.value(forKeyPath: "location.address") as? String
+            
+            let categories = location["categories"] as? NSArray
+            if (categories != nil && categories!.count > 0) {
+                let category = categories![0] as! NSDictionary
+                let urlPrefix = category.value(forKeyPath: "icon.prefix") as! String
+                let urlSuffix = category.value(forKeyPath: "icon.suffix") as! String
+                
+                let url = "\(urlPrefix)bg_32\(urlSuffix)"
+                //categoryImageView.setImageWith(URL(string: url)!)
+            }
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
