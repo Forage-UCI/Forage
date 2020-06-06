@@ -1,21 +1,20 @@
 //
-//  FavoriteViewController.swift
+//  CheckInFeedViewController.swift
 //  Forage
 //
-//  Created by Maha Malik on 6/4/20.
+//  Created by Maha Malik on 6/5/20.
 //  Copyright © 2020 Forage-UCI. All rights reserved.
 //
 
 import UIKit
 import Parse
 
-class FavoriteViewController: UIViewController {
+class CheckInFeedViewController: UIViewController {
 
-    @IBOutlet weak var favBtn: UIButton!
-    @IBOutlet weak var reviewTextField: UITextView!
-    @IBOutlet weak var restaurantImageView: UIImageView!
-    @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var restaurantName: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var restaurantImageView: UIImageView!
+    @IBOutlet weak var checkInBtn: UIButton!
     
     var venue: NSDictionary = [:]
     let CLIENT_ID = "QA1L0Z0ZNA2QVEEDHFPQWK0I5F1DE3GPLSNW4BZEBGJXUCFL"
@@ -23,16 +22,19 @@ class FavoriteViewController: UIViewController {
     
     var restName: String!
     var formattedAddress: [String]!
+    var address: String!
     var placeID: String!
-    
+    var imageURL: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData()
-        
-        restaurantImageView.layer.cornerRadius = 5;
-        restaurantImageView.layer.masksToBounds = true;
-        // Do any additional setup after loading the view.
+
+        restaurantImageView.layer.cornerRadius = 5
+        restaurantImageView.layer.masksToBounds = true
+        restaurantName.text = restName
+        addressLabel.text = address
+        print(imageURL)
+        restaurantImageView.af_setImage(withURL: URL(string: imageURL)!)
     }
     
     func loadData(){
@@ -91,12 +93,34 @@ class FavoriteViewController: UIViewController {
         
     }
     
-    @IBAction func onFavBtn(_ sender: Any) {
-        favBtn.backgroundColor = UIColorFromRGB(rgbValue: 0xe20147)
-        favBtn.setTitle("Favorited!", for: .normal)
-        
-        //TODO: add to favorite of posts
-        
+    @IBAction func onCheckInBtn(_ sender: Any) {
+//        let post = PFObject(className: "CheckInHistory")
+//
+//        post["name"] = restaurantName.text
+//        post["address"] = formattedAddress
+//        post["placeID"] = placeID
+//        post["user"] = PFUser.current()
+
+
+        checkInBtn.backgroundColor = UIColorFromRGB(rgbValue: 0x63c522)
+        checkInBtn.setTitle("Checked-In!", for: .normal)
+
+        //TODO: link restaurand id with user: user should have column that contains list of fav restaurands
+        //if post[freq] != 0:
+        // post[freq]++
+        // save posts
+
+
+//        post.saveInBackground { (success, error) in
+//            if success{
+//                PFUser.current()?.addUniqueObject(self.placeID!, forKey: "favRestaurantsList")
+//                self.dismiss(animated: true, completion: nil)
+//                print("Saved Post")
+//            }else{
+//                print("Failed to save Posts: \(String(describing: error?.localizedDescription))")
+//            }
+//        }
+            
     }
     
     func UIColorFromRGB(rgbValue: UInt) -> UIColor {
@@ -108,7 +132,6 @@ class FavoriteViewController: UIViewController {
         )
     }
     
-
     /*
     // MARK: - Navigation
 

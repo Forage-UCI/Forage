@@ -146,7 +146,7 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
         
         if segue.identifier == "CheckinSegue"{
             let checkInViewController = segue.destination as! CheckInViewController
-            print(venue)
+            //print(venue)
             let name = venue.value(forKeyPath: "name") as! String
             let formattedAdress = venue.value(forKeyPath: "location.formattedAddress") as! [String]?
             let id = venue.value(forKey: "id") as! String

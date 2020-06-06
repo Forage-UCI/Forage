@@ -1,53 +1,68 @@
 //
-//  ListLocationsViewController.swift
+//  NewLocationsViewController.swift
 //  Forage
 //
-//  Created by Maha Malik on 6/4/20.
+//  Created by Maha Malik on 6/5/20.
 //  Copyright © 2020 Forage-UCI. All rights reserved.
 //
 
 import UIKit
+import CoreLocation
 
-// ----- TODO: Add protocol to communicate with PhotoMapViewController
-protocol ListLocationsViewControllerDelegate: class {
-    func locationsPickedLocation(controller: LocationsViewController, latitude: NSNumber, longitude: NSNumber, title: String)
+protocol NewLocationsViewControllerDelegate: class {
+    func locationsPickedLocation(controller: NewLocationsViewController, latitude: NSNumber, longitude: NSNumber, title: String)
 }
 
-class ListLocationsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+class NewLocationsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
+    weak var delegate: LocationsViewControllerDelegate!
+       
+       // ––––– TODO: Fill in actual CLIENT_ID and CLIENT_SECRET
+       let CLIENT_ID = "QA1L0Z0ZNA2QVEEDHFPQWK0I5F1DE3GPLSNW4BZEBGJXUCFL"
+       let CLIENT_SECRET = "W2AOE1TYC4MHK5SZYOUGX0J3LVRALMPB4CXT3ZH21ZCPUMCU"
     
-    // ––––– TODO: Add delegate
-    weak var delegate: ListLocationsViewControllerDelegate!
-    
-    // ––––– TODO: Fill in actual CLIENT_ID and CLIENT_SECRET
-    let CLIENT_ID = "QA1L0Z0ZNA2QVEEDHFPQWK0I5F1DE3GPLSNW4BZEBGJXUCFL"
-    let CLIENT_SECRET = "W2AOE1TYC4MHK5SZYOUGX0J3LVRALMPB4CXT3ZH21ZCPUMCU"
-
     @IBOutlet weak var tableView: UITableView!
+    //tableView
     @IBOutlet weak var searchBar: UISearchBar!
+    //searchBar
     
     var results: NSArray = []
     
+    var locationManager = CLLocationManager()
+    var currentLoc: CLLocation!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableView.dataSource = self
         tableView.delegate = self
         searchBar.delegate = self
+        getCurrentLocation()
+        fetchLocations(query: "temp")
+
+        // Do any additional setup after loading the view.
     }
     
-   override func didReceiveMemoryWarning() {
-            super.didReceiveMemoryWarning()
-            // Dispose of any resources that can be recreated.
+    func getCurrentLocation(){
+        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
+            CLLocationManager.authorizationStatus() == .authorizedAlways {
+            currentLoc = locationManager.location
+            //print("lat: \(currentLoc.coordinate.latitude)  lng: \(currentLoc.coordinate.longitude)")
+        }
     }
 
-        
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return results.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ExploreRestaurantCell") as! ExploreRestaurantCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NewLocationCell") as! NewLocationCell
         
         cell.location = results[(indexPath as NSIndexPath).row] as? NSDictionary
         
@@ -59,41 +74,32 @@ class ListLocationsViewController: UIViewController, UITableViewDelegate, UITabl
         // This is the selected venue
         let venue = results[(indexPath as NSIndexPath).row] as! NSDictionary
         
-//        print(venue)
-//
-//        // Lat and lng of venue selected
-//        let lat = venue.value(forKeyPath: "location.lat") as! NSNumber
-//        let lng = venue.value(forKeyPath: "location.lng") as! NSNumber
-//        let name = venue.value(forKeyPath: "name") as! String
-//
-//        /*-------TODO--------*/
-//        //Set the latitude and longitude of the venue and send it to the protocol
-//        //delegate.locationsPickedLocation(controller: self, latitude: lat, longitude: lng, title: name)
-//
-//        // Return to the PhotoMapViewController with the lat and lng of venue
-//
-//        let latString = "\(lat)"
-//        let lngString = "\(lng)"
-//
-//        print(latString + " " + lngString)
-        self.performSegue(withIdentifier: "FavoriteSegue", sender: tableView.cellForRow(at: indexPath))
+        /*-------TODO--------*/
+        //Set the latitude and longitude of the venue and send it to the protocol
+        //delegate.locationsPickedLocation(controller: self, latitude: lat, longitude: lng, title: name)
+        
+        // Return to the PhotoMapViewController with the lat and lng of venue
+        
+        self.performSegue(withIdentifier: "NewFavSegue", sender: tableView.cellForRow(at: indexPath))
         
     }
 
     func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         let newText = NSString(string: searchBar.text!).replacingCharacters(in: range, with: text)
-        fetchLocations(newText)
+        fetchLocations(query: newText)
         
         return true
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        fetchLocations(searchBar.text!)
+        fetchLocations(query: searchBar.text!)
     }
 
-    func fetchLocations(_ query: String, near: String = "Irvine") {
+    func fetchLocations(query: String = "", near: String = "Irvine") {
         let baseUrlString = "https://api.foursquare.com/v2/venues/search?"
+        
         let queryString = "client_id=\(CLIENT_ID)&client_secret=\(CLIENT_SECRET)&v=20141020&near=\(near),CA&query=\(query)"
+        //let queryString = "client_id=\(CLIENT_ID)&client_secret=\(CLIENT_SECRET)&v=20141020&ll=\(currentLoc.coordinate.latitude),\(currentLoc.coordinate.longitude)&query=\(query)"
 
         let url = URL(string: baseUrlString + queryString.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!)!
         let request = URLRequest(url: url)
@@ -110,9 +116,10 @@ class ListLocationsViewController: UIViewController, UITableViewDelegate, UITabl
                     if let responseDictionary = try! JSONSerialization.jsonObject(
                         with: data, options:[]) as? NSDictionary {
                             NSLog("response: \(responseDictionary)")
+                        if responseDictionary != nil {
                             self.results = responseDictionary.value(forKeyPath: "response.venues") as! NSArray
                             self.tableView.reloadData()
-
+                        }
                     }
                 }
         });
@@ -125,17 +132,18 @@ class ListLocationsViewController: UIViewController, UITableViewDelegate, UITabl
         //Do data processing
         let venue = results[(indexPath as NSIndexPath).row] as! NSDictionary
         
-        if segue.identifier == "FavoriteSegue"{
-            let favViewController = segue.destination as! FavoriteViewController
-            
+        if segue.identifier == "NewFavSegue"{
+            let checkInViewController = segue.destination as! NewFavoritesViewController
+            //print(venue)
             let name = venue.value(forKeyPath: "name") as! String
             let formattedAdress = venue.value(forKeyPath: "location.formattedAddress") as! [String]?
             let id = venue.value(forKey: "id") as! String
-            favViewController.restName = name
-            favViewController.formattedAddress = formattedAdress
-            favViewController.placeID = id
+            checkInViewController.restName = name
+            checkInViewController.formattedAddress = formattedAdress
+            checkInViewController.placeID = id
         }
         tableView.deselectRow(at: indexPath, animated: true)
     //        self.dismiss(animated: true, completion: nil)
     }
+
 }
