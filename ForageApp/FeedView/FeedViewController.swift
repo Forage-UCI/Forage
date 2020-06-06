@@ -108,6 +108,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        FeedTableView.deselectRow(at: indexPath, animated: true)
         let vc = storyboard?.instantiateViewController(identifier: "CheckInFeedViewController") as? CheckInFeedViewController
         vc?.address = addresses[indexPath.row]
         vc?.restName = favorites[indexPath.row]
