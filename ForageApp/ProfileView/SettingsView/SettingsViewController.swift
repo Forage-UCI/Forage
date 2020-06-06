@@ -17,6 +17,9 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var callView: UIView!
     @IBOutlet weak var cancelButton: UIButton!
     
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,6 +33,8 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
         callView.layer.masksToBounds = true;
         callView.layer.borderWidth = 1
         callView.layer.borderColor = UIColor.orange.cgColor
+        
+        tableView.separatorStyle = .none
     }
     
     @IBAction func onEditProfileButton(_ sender: Any) {
@@ -77,3 +82,7 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
     */
 
 }
+
+//extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
+//
+//}

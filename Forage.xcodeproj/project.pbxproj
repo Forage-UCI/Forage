@@ -38,6 +38,9 @@
 		58FEF60E24898C82005F929E /* ExploreRestaurantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FEF60D24898C82005F929E /* ExploreRestaurantCell.swift */; };
 		7970A789A6B4648F741B0965 /* Pods_Forage_ForageUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0871650A54C7EEC7F7DE95FF /* Pods_Forage_ForageUITests.framework */; };
 		9DE7BD81058CDE9AE7AE6E20 /* Pods_Forage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 624B99A23E7C73A7CDFBEF4E /* Pods_Forage.framework */; };
+		CA37F3EA248B853C00A091FD /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA590A24248B82AD00468DAB /* SettingsTableViewController.swift */; };
+		CA37F3EC248B8AD700A091FD /* ProfileSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA37F3EB248B8AD700A091FD /* ProfileSettingsTableViewController.swift */; };
+		CA37F3EE248B9C5300A091FD /* NotificationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA37F3ED248B9C5300A091FD /* NotificationsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +103,9 @@
 		624B99A23E7C73A7CDFBEF4E /* Pods_Forage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Forage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		86D64CD43B280332B316EE6A /* Pods-Forage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forage.debug.xcconfig"; path = "Target Support Files/Pods-Forage/Pods-Forage.debug.xcconfig"; sourceTree = "<group>"; };
 		A996A3823F24D5968F5493CB /* Pods-Forage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forage.release.xcconfig"; path = "Target Support Files/Pods-Forage/Pods-Forage.release.xcconfig"; sourceTree = "<group>"; };
+		CA37F3EB248B8AD700A091FD /* ProfileSettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsTableViewController.swift; sourceTree = "<group>"; };
+		CA37F3ED248B9C5300A091FD /* NotificationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewController.swift; sourceTree = "<group>"; };
+		CA590A24248B82AD00468DAB /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsTableViewController.swift; path = Pods/SettingsTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		CF1893EBD441C2851D65C5D6 /* Pods-Forage-ForageUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forage-ForageUITests.release.xcconfig"; path = "Target Support Files/Pods-Forage-ForageUITests/Pods-Forage-ForageUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -174,8 +180,11 @@
 		2020BAE0248784BF001525EE /* SettingsView */ = {
 			isa = PBXGroup;
 			children = (
+				CA590A24248B82AD00468DAB /* SettingsTableViewController.swift */,
+				CA37F3EB248B8AD700A091FD /* ProfileSettingsTableViewController.swift */,
 				58D160B72486142C003FC1C1 /* NotificationsViewController.swift */,
 				58D160B1248611A4003FC1C1 /* SettingsViewController.swift */,
+				CA37F3ED248B9C5300A091FD /* NotificationsTableViewController.swift */,
 				58D160B524861412003FC1C1 /* PrivacyViewController.swift */,
 				5849A7B0248AC1B700789F42 /* PrivacyCell.swift */,
 			);
@@ -565,8 +574,10 @@
 				58D160B4248613AB003FC1C1 /* LocationsViewController.swift in Sources */,
 				58394CA8247E2C2600BC3053 /* FeedViewController.swift in Sources */,
 				582DD2F0248A1E0100CDA639 /* NetworkService.swift in Sources */,
+				CA37F3EE248B9C5300A091FD /* NotificationsTableViewController.swift in Sources */,
 				5852D4DD247CF81300D09889 /* AppDelegate.swift in Sources */,
 				581AE773248B588F00A85AD3 /* NewLocationCell.swift in Sources */,
+				CA37F3EC248B8AD700A091FD /* ProfileSettingsTableViewController.swift in Sources */,
 				2020BADC24878371001525EE /* CheckInViewController.swift in Sources */,
 				58D160BA2486144A003FC1C1 /* LocationCell.swift in Sources */,
 				58BF80C6247E2FA00055F44F /* ExploreViewController.swift in Sources */,
@@ -579,6 +590,7 @@
 				5849A7B1248AC1B700789F42 /* PrivacyCell.swift in Sources */,
 				58D160BC248614A6003FC1C1 /* FeedRestaurantCell.swift in Sources */,
 				5849A7AF248A247A00789F42 /* Models.swift in Sources */,
+				CA37F3EA248B853C00A091FD /* SettingsTableViewController.swift in Sources */,
 				581AE775248B58A000A85AD3 /* NewFavoritesViewController.swift in Sources */,
 				58D160B2248611A4003FC1C1 /* SettingsViewController.swift in Sources */,
 				58FEF60E24898C82005F929E /* ExploreRestaurantCell.swift in Sources */,
