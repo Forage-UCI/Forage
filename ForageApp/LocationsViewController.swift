@@ -17,7 +17,7 @@ protocol LocationsViewControllerDelegate: class {
 
 
 
-class LocationsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+class LocationsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, CLLocationManagerDelegate {
 
     
     // ––––– TODO: Add delegate
@@ -41,19 +41,28 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
         tableView.dataSource = self
         tableView.delegate = self
         searchBar.delegate = self
-        getCurrentLocation()
-        fetchLocations(query: "temp")
+        
+        //Request currented location permissions
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
+        
     }
     
-    //Get Current Locations
-    func getCurrentLocation(){
-        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
-            CLLocationManager.authorizationStatus() == .authorizedAlways {
-            currentLoc = locationManager.location
-            //print("lat: \(currentLoc.coordinate.latitude)  lng: \(currentLoc.coordinate.longitude)")
+    //get Current Location
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            print("Found user's location: \(location)")
+            self.currentLoc = location
+            fetchLocations()
         }
     }
 
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Failed to find user's location: \(error.localizedDescription)")
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -99,32 +108,34 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func fetchLocations(query: String = "") {
-        let baseUrlString = "https://api.foursquare.com/v2/venues/search?"
-        let queryString = "client_id=\(CLIENT_ID)&client_secret=\(CLIENT_SECRET)&v=20141020&ll=\(currentLoc.coordinate.latitude),\(currentLoc.coordinate.longitude)&query=\(query)"
+        if currentLoc != nil{
+            let baseUrlString = "https://api.foursquare.com/v2/venues/search?"
+            let queryString = "client_id=\(CLIENT_ID)&client_secret=\(CLIENT_SECRET)&v=20141020&ll=\(currentLoc.coordinate.latitude),\(currentLoc.coordinate.longitude)&query=\(query)"
 
-        let url = URL(string: baseUrlString + queryString.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!)!
-        let request = URLRequest(url: url)
+            let url = URL(string: baseUrlString + queryString.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!)!
+            let request = URLRequest(url: url)
 
-        let session = URLSession(
-            configuration: URLSessionConfiguration.default,
-            delegate:nil,
-            delegateQueue:OperationQueue.main
-        )
-        
-        let task : URLSessionDataTask = session.dataTask(with: request,
-            completionHandler: { (dataOrNil, response, error) in
-                if let data = dataOrNil {
-                    if let responseDictionary = try! JSONSerialization.jsonObject(
-                        with: data, options:[]) as? NSDictionary {
-                            NSLog("response: \(responseDictionary)")
-                        if responseDictionary != nil {
-                            self.results = responseDictionary.value(forKeyPath: "response.venues") as! NSArray
-                            self.tableView.reloadData()
+            let session = URLSession(
+                configuration: URLSessionConfiguration.default,
+                delegate:nil,
+                delegateQueue:OperationQueue.main
+            )
+            
+            let task : URLSessionDataTask = session.dataTask(with: request,
+                completionHandler: { (dataOrNil, response, error) in
+                    if let data = dataOrNil {
+                        if let responseDictionary = try! JSONSerialization.jsonObject(
+                            with: data, options:[]) as? NSDictionary {
+                                NSLog("response: \(responseDictionary)")
+                            if responseDictionary != nil {
+                                self.results = responseDictionary.value(forKeyPath: "response.venues") as! NSArray
+                                self.tableView.reloadData()
+                            }
                         }
                     }
-                }
-        });
-        task.resume()
+            });
+            task.resume()
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

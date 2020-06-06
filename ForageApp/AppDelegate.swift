@@ -10,7 +10,6 @@
 import UIKit
 import Parse
 import UserNotifications
-import CoreLocation
 import Moya
 
 
@@ -24,29 +23,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        
         Parse.initialize(
             with: ParseClientConfiguration(block: { (configuration: ParseMutableClientConfiguration) -> Void in
                 configuration.applicationId = "forage-uci"
                 configuration.server = "https://forage-uci.herokuapp.com/parse"
             })
         )
-        //Request currented location permissions
-        locationManager = CLLocationManager()
-        locationManager?.delegate = self
-        locationManager?.requestWhenInUseAuthorization()
         
         //Notification setup
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
             print("granted: (\(granted)")
         }
-        
-        /*https://maps.googleapis.com/maps/api/place/nearbysearch/json
-        ?location=-33.8670522,151.1957362
-        &radius=500
-        &types=food
-        &name=harbour
-        &key=YOUR_API_KEY*/
         
         return true
     }
